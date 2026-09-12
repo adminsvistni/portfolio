@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Виктор — веб-разработчик | Портфолио</title>
-  <meta name="description" content="Виктор — веб-разработчик. Лендинги, сайты на WordPress и Tilda, Telegram и MAX боты. Быстро и с фокусом на результат.">
+  <meta name="description" content="Виктор — веб-разработчик. Лендинги, сайты, боты, MVP и частные мессенджеры с E2E-шифрованием.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,7 +34,7 @@
         <h1>Создаю сайты,<br>которые приносят<br>результат бизнесу</h1>
         <p class="hero-desc">
           Меня зовут Виктор. Специализируюсь на лендингах, сайтах на WordPress и Tilda, 
-          а также ботах для Telegram и MAX. Работаю быстро, чисто и с упором на конверсию.
+          ботах для Telegram и MAX, быстрых MVP и частных мессенджерах с E2E-шифрованием. Работаю быстро и с упором на результат.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Смотреть проекты</a>
@@ -168,7 +168,7 @@
 
         <a href="projects/max-bot.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58d7ffe?w=900&q=85" alt="MAX бот" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&q=85" alt="MAX бот" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
@@ -188,13 +188,9 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-photo">
-          <!-- КАК ВСТАВИТЬ СВОЁ ФОТО:
-               1. Положи файл photo.jpg в папку portfolio (рядом с index.html)
-               2. Замени блок ниже на:
-               <img src="photo.jpg" alt="Виктор" class="about-photo-img">
-          -->
-          <img src="foto.jpg" alt="Виктор" class="about-photo-img">
-          <p class="about-photo-note">Сюда нужно вставить своё фото (см. комментарий в коде)</p>
+          <img src="foto.jpg" alt="Виктор" class="about-photo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="about-photo-inner" style="display:none">В</div>
+          <p class="about-photo-note">foto.jpg</p>
         </div>
         <div class="about-text">
           <span class="section-label">Обо мне</span>
@@ -236,10 +232,10 @@
         <div class="skill-card">
           <h4>Backend и данные</h4>
           <ul>
-            <li>PHP</li>
-            <li>Python</li>
+            <li>PHP, Python</li>
             <li>SQL (MySQL / PostgreSQL)</li>
             <li>REST API, интеграции</li>
+            <li>MVP, WebSocket, E2E-шифрование</li>
           </ul>
         </div>
         <div class="skill-card">
@@ -265,28 +261,34 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-num">01</div>
           <h3>Лендинги под ключ</h3>
           <p>Продающие одностраничники с нуля или по макету. Формы, аналитика, адаптив.</p>
           <div class="service-price">от 5 000 ₽</div>
         </div>
         <div class="service-card">
-          <div class="service-num">02</div>
           <h3>Сайты на WordPress / Tilda</h3>
           <p>Удобные в управлении сайты для бизнеса и специалистов.</p>
           <div class="service-price">от 15 000 ₽</div>
         </div>
         <div class="service-card">
-          <div class="service-num">03</div>
           <h3>Telegram и MAX боты</h3>
           <p>Запись, заявки, меню услуг, уведомления администратору.</p>
           <div class="service-price">от 3 000 ₽</div>
         </div>
         <div class="service-card">
-          <div class="service-num">04</div>
           <h3>Правки и доработки</h3>
           <p>Исправления, новые блоки, адаптив, мелкие улучшения.</p>
           <div class="service-price">от 2 000 ₽</div>
+        </div>
+        <div class="service-card">
+          <h3>Быстрая разработка MVP</h3>
+          <p>Прототип продукта для проверки идеи: сайт, кабинет, бот или простой сервис. Запуск в сжатые сроки.</p>
+          <div class="service-price">от 25 000 ₽</div>
+        </div>
+        <div class="service-card">
+          <h3>Частные мессенджеры</h3>
+          <p>Закрытые чаты и мессенджеры с end-to-end шифрованием для команд и бизнеса. Без лишней публичности.</p>
+          <div class="service-price">от 40 000 ₽</div>
         </div>
       </div>
     </div>
