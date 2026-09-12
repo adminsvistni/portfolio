@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureChat — частный мессенджер с E2E</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0b1220; color: #e2e8f0; min-height: 100vh; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 36px 24px 80px; }
+    .back { color: #94a3b8; font-size: 14px; text-decoration: none; display: inline-block; margin-bottom: 28px; }
+    .back:hover { color: #fff; }
+    h1 { font-size: 30px; font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 10px; }
+    .subtitle { color: #94a3b8; margin-bottom: 32px; max-width: 620px; line-height: 1.6; }
+    .layout { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
+    .chat-app {
+      background: #111827; border: 1px solid #1f2937; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35); min-height: 560px; display: flex; flex-direction: column;
+    }
+    .chat-top {
+      padding: 16px 18px; border-bottom: 1px solid #1f2937; display: flex; justify-content: space-between; align-items: center;
+      background: #0f172a;
+    }
+    .chat-top strong { color: #fff; font-size: 15px; }
+    .badge {
+      font-size: 12px; font-weight: 600; color: #86efac; background: rgba(22,163,74,0.15);
+      border: 1px solid rgba(34,197,94,0.3); padding: 4px 10px; border-radius: 100px;
+    }
+    .messages { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+    .msg { max-width: 78%; padding: 12px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; }
+    .msg-in { align-self: flex-start; background: #1f2937; color: #e5e7eb; border-bottom-left-radius: 4px; }
+    .msg-out { align-self: flex-end; background: #2563eb; color: #fff; border-bottom-right-radius: 4px; }
+    .msg small { display: block; margin-top: 6px; font-size: 11px; opacity: 0.6; }
+    .composer {
+      border-top: 1px solid #1f2937; padding: 14px; display: flex; gap: 10px; background: #0f172a;
+    }
+    .composer input {
+      flex: 1; background: #1f2937; border: 1px solid #374151; color: #fff;
+      border-radius: 12px; padding: 12px 14px; font-size: 14px; font-family: inherit;
+    }
+    .composer input:focus { outline: none; border-color: #3b82f6; }
+    .composer button {
+      background: #2563eb; color: #fff; border: none; border-radius: 12px;
+      padding: 0 18px; font-weight: 600; cursor: pointer; font-family: inherit;
+    }
+    .side h2 { font-size: 18px; color: #fff; margin-bottom: 14px; }
+    .side p { color: #94a3b8; font-size: 14px; line-height: 1.65; margin-bottom: 16px; }
+    .feat {
+      background: #111827; border: 1px solid #1f2937; border-radius: 14px;
+      padding: 14px; margin-bottom: 10px;
+    }
+    .feat strong { display: block; color: #fff; font-size: 14px; margin-bottom: 4px; }
+    .feat span { color: #94a3b8; font-size: 13px; }
+    .cta {
+      margin-top: 18px; display: inline-flex; background: #2563eb; color: #fff;
+      padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none;
+    }
+    @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Назад к портфолио</a>
+    <h1>SecureChat — частный мессенджер</h1>
+    <p class="subtitle">Демо закрытого чата с имитацией end-to-end шифрования. Сообщения не уходят на внешний сервер в этом демо — всё работает локально в браузере.</p>
+
+    <div class="layout">
+      <div class="chat-app">
+        <div class="chat-top">
+          <div>
+            <strong>Команда · Проект Alpha</strong>
+          </div>
+          <div class="badge">E2E защищено</div>
+        </div>
+        <div class="messages" id="messages">
+          <div class="msg msg-in">Привет. Канал только для нашей команды.<small>Алексей · зашифровано</small></div>
+          <div class="msg msg-out">Ок. Документы кидаю только сюда.<small>Вы · зашифровано</small></div>
+          <div class="msg msg-in">Принял. Завтра созвон в 11:00.<small>Алексей · зашифровано</small></div>
+        </div>
+        <form class="composer" id="form">
+          <input id="input" type="text" placeholder="Напишите сообщение..." autocomplete="off" required>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+
+      <div class="side">
+        <h2>Что это за проект</h2>
+        <p>Пример частного мессенджера для команд и бизнеса: закрытые чаты, без публичной регистрации и с акцентом на конфиденциальность.</p>
+        <div class="feat"><strong>End-to-end шифрование</strong><span>Сообщения читает только отправитель и получатель</span></div>
+        <div class="feat"><strong>Закрытый доступ</strong><span>Только приглашённые участники</span></div>
+        <div class="feat"><strong>Веб-клиент</strong><span>Работает в браузере, можно развить до приложения</span></div>
+        <a class="cta" href="https://t.me/cccp812admin" target="_blank">Заказать похожий проект</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const messages = document.getElementById('messages');
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+    const replies = [
+      'Принял, всё зашифровано.',
+      'Ок, видно только нам.',
+      'Записал. Напишу после встречи.',
+      'Спасибо, документ получил.'
+    ];
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      const out = document.createElement('div');
+      out.className = 'msg msg-out';
+      out.innerHTML = text.replace(/</g,'&lt;') + '<small>Вы · зашифровано</small>';
+      messages.appendChild(out);
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+      setTimeout(() => {
+        const inn = document.createElement('div');
+        inn.className = 'msg msg-in';
+        inn.innerHTML = replies[Math.floor(Math.random()*replies.length)] + '<small>Алексей · зашифровано</small>';
+        messages.appendChild(inn);
+        messages.scrollTop = messages.scrollHeight;
+      }, 600);
+    });
+  </script>
+</body>
+</html>

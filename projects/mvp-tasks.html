@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow MVP — учёт задач</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+    .top {
+      background: #fff; border-bottom: 1px solid #e2e8f0; padding: 16px 0;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .top .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 18px; color: #2563eb; }
+    .back { color: #64748b; font-size: 14px; text-decoration: none; }
+    .back:hover { color: #0f172a; }
+    .hero { padding: 36px 0 10px; }
+    .hero h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 8px; }
+    .hero p { color: #64748b; max-width: 640px; line-height: 1.6; margin-bottom: 20px; }
+    .badge {
+      display: inline-block; background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: 700;
+      padding: 5px 10px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .panel {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.04); margin-bottom: 24px;
+    }
+    .composer { display: flex; gap: 10px; flex-wrap: wrap; }
+    .composer input, .composer select {
+      border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 12px 14px;
+      font-size: 14px; font-family: inherit; background: #f8fafc;
+    }
+    .composer input { flex: 1; min-width: 220px; }
+    .composer input:focus, .composer select:focus { outline: none; border-color: #2563eb; background: #fff; }
+    .btn {
+      background: #2563eb; color: #fff; border: none; border-radius: 10px;
+      padding: 12px 18px; font-weight: 600; cursor: pointer; font-family: inherit;
+    }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; }
+    .filter {
+      border: 1px solid #e2e8f0; background: #fff; border-radius: 100px;
+      padding: 8px 14px; font-size: 13px; cursor: pointer; font-family: inherit;
+    }
+    .filter.active { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .tasks { display: flex; flex-direction: column; gap: 10px; }
+    .task {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px;
+      padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; align-items: center;
+    }
+    .task h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .task .meta { font-size: 12px; color: #64748b; }
+    .status {
+      font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 100px; white-space: nowrap;
+    }
+    .todo { background: #f1f5f9; color: #475569; }
+    .doing { background: #eff6ff; color: #2563eb; }
+    .done { background: #dcfce7; color: #15803d; }
+    .actions { display: flex; gap: 8px; }
+    .actions button {
+      border: 1px solid #e2e8f0; background: #fff; border-radius: 8px;
+      padding: 7px 10px; font-size: 12px; cursor: pointer; font-family: inherit;
+    }
+    .note {
+      margin: 28px 0 40px; color: #64748b; font-size: 14px; line-height: 1.6;
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px;
+    }
+    .note a { color: #2563eb; font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="container">
+      <div class="logo">TaskFlow MVP</div>
+      <a class="back" href="../index.html">← К портфолио</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero">
+      <div class="badge">MVP · быстрый запуск</div>
+      <h1>TaskFlow — простой учёт задач для команды</h1>
+      <p>Пример MVP: минимальный рабочий продукт, которого достаточно, чтобы проверить идею. Можно создавать задачи, менять статусы и фильтровать список.</p>
+    </div>
+
+    <div class="panel">
+      <form class="composer" id="form">
+        <input id="title" type="text" placeholder="Новая задача..." required>
+        <select id="status">
+          <option value="todo">К выполнению</option>
+          <option value="doing">В работе</option>
+          <option value="done">Готово</option>
+        </select>
+        <button class="btn" type="submit">Добавить</button>
+      </form>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">Все</button>
+      <button class="filter" data-filter="todo">К выполнению</button>
+      <button class="filter" data-filter="doing">В работе</button>
+      <button class="filter" data-filter="done">Готово</button>
+    </div>
+
+    <div class="tasks" id="tasks"></div>
+
+    <div class="note">
+      Это демо MVP для портфолио. В боевой версии добавляются авторизация, роли, база данных и уведомления.<br>
+      Нужен похожий MVP под вашу идею? <a href="https://t.me/cccp812admin" target="_blank">Написать в Telegram</a>
+    </div>
+  </div>
+
+  <script>
+    const statusLabel = { todo: 'К выполнению', doing: 'В работе', done: 'Готово' };
+    let tasks = [
+      { id: 1, title: 'Собрать обратную связь от 5 пользователей', status: 'doing' },
+      { id: 2, title: 'Добавить фильтр по статусу', status: 'done' },
+      { id: 3, title: 'Подготовить лендинг для теста спроса', status: 'todo' }
+    ];
+    let filter = 'all';
+
+    const tasksEl = document.getElementById('tasks');
+    const form = document.getElementById('form');
+
+    function render() {
+      const list = filter === 'all' ? tasks : tasks.filter(t => t.status === filter);
+      tasksEl.innerHTML = list.map(t => `
+        <div class="task">
+          <div>
+            <h3>${t.title}</h3>
+            <div class="meta">ID #${t.id}</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+            <span class="status ${t.status}">${statusLabel[t.status]}</span>
+            <div class="actions">
+              <button onclick="setStatus(${t.id}, 'todo')">К выполнению</button>
+              <button onclick="setStatus(${t.id}, 'doing')">В работе</button>
+              <button onclick="setStatus(${t.id}, 'done')">Готово</button>
+            </div>
+          </div>
+        </div>
+      `).join('') || '<p style="color:#94a3b8">Нет задач в этом фильтре</p>';
+    }
+
+    function setStatus(id, status) {
+      tasks = tasks.map(t => t.id === id ? { ...t, status } : t);
+      render();
+    }
+    window.setStatus = setStatus;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('title').value.trim();
+      const status = document.getElementById('status').value;
+      if (!title) return;
+      tasks.unshift({ id: Date.now(), title, status });
+      form.reset();
+      render();
+    });
+
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
