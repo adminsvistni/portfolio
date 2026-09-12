@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram-бот для записи — демо</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+    .back { display: inline-flex; color: #94a3b8; font-size: 14px; margin-bottom: 32px; text-decoration: none; }
+    .back:hover { color: #fff; }
+    h1 { font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; color: #fff; }
+    .subtitle { color: #94a3b8; font-size: 16px; margin-bottom: 40px; max-width: 560px; }
+    
+    .layout { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; }
+    
+    /* Phone mockup */
+    .phone {
+      background: #1e293b; border-radius: 36px; padding: 12px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5); border: 3px solid #334155;
+      position: sticky; top: 24px;
+    }
+    .phone-screen {
+      background: #0f172a; border-radius: 28px; overflow: hidden;
+      height: 580px; display: flex; flex-direction: column;
+    }
+    .phone-header {
+      background: #1e293b; padding: 16px 16px 12px; display: flex; align-items: center; gap: 12px;
+      border-bottom: 1px solid #334155;
+    }
+    .bot-avatar {
+      width: 40px; height: 40px; background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .bot-info strong { display: block; font-size: 14px; color: #fff; }
+    .bot-info span { font-size: 12px; color: #22c55e; }
+    
+    .chat { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+    .msg {
+      max-width: 85%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.45;
+    }
+    .msg-bot { background: #1e293b; color: #e2e8f0; border-bottom-left-radius: 4px; align-self: flex-start; }
+    .msg-user { background: #2563eb; color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+    .msg time { display: block; font-size: 11px; opacity: 0.5; margin-top: 4px; }
+    
+    .keyboard {
+      padding: 10px; background: #1e293b; border-top: 1px solid #334155;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .key {
+      background: #334155; color: #e2e8f0; border: none; padding: 12px 8px;
+      border-radius: 10px; font-size: 13px; font-weight: 500; cursor: pointer;
+      font-family: inherit; transition: 0.15s;
+    }
+    .key:hover { background: #475569; }
+    .key.full { grid-column: 1 / -1; }
+    
+    /* Info side */
+    .info h2 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .info p { color: #94a3b8; font-size: 15px; margin-bottom: 20px; line-height: 1.65; }
+    .features { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .feature {
+      display: flex; gap: 14px; padding: 16px; background: #1e293b;
+      border-radius: 14px; border: 1px solid #334155;
+    }
+    .feature-icon { font-size: 22px; flex-shrink: 0; }
+    .feature strong { display: block; font-size: 14px; color: #fff; margin-bottom: 4px; }
+    .feature span { font-size: 13px; color: #94a3b8; }
+    
+    .cta-box {
+      background: linear-gradient(135deg, #1e3a5f, #1e293b); border: 1px solid #334155;
+      border-radius: 16px; padding: 24px;
+    }
+    .cta-box h3 { font-size: 17px; color: #fff; margin-bottom: 8px; }
+    .cta-box p { font-size: 14px; color: #94a3b8; margin-bottom: 16px; }
+    .cta-box a {
+      display: inline-flex; background: #2563eb; color: #fff; padding: 12px 22px;
+      border-radius: 10px; font-weight: 600; font-size: 14px;
+    }
+    
+    @media (max-width: 800px) {
+      .layout { grid-template-columns: 1fr; }
+      .phone { position: relative; top: 0; max-width: 340px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="../index.html" class="back">← Назад к портфолио</a>
+    <h1>Telegram-бот для записи клиентов</h1>
+    <p class="subtitle">Интерактивное демо. Нажимайте кнопки в «телефоне» справа/слева — бот отвечает как настоящий.</p>
+
+    <div class="layout">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div class="bot-avatar">🤖</div>
+            <div class="bot-info">
+              <strong>ЗаписьБот</strong>
+              <span>● онлайн</span>
+            </div>
+          </div>
+          <div class="chat" id="chat">
+            <div class="msg msg-bot">
+              Здравствуйте! 👋<br>Я помогу записаться на услугу.
+              <time>только что</time>
+            </div>
+          </div>
+          <div class="keyboard" id="keyboard">
+            <button class="key" data-action="services">📋 Услуги</button>
+            <button class="key" data-action="book">📅 Записаться</button>
+            <button class="key" data-action="price">💰 Цены</button>
+            <button class="key" data-action="contacts">📞 Контакты</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <h2>Что умеет этот бот</h2>
+        <p>Типичный бот для малого бизнеса: запись клиентов, показ услуг и цен, сбор контактов и уведомление администратора.</p>
+        
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">📋</div>
+            <div>
+              <strong>Меню услуг</strong>
+              <span>Клиент видит список услуг прямо в чате</span>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📅</div>
+            <div>
+              <strong>Онлайн-запись</strong>
+              <span>Выбор даты и времени без звонков</span>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔔</div>
+            <div>
+              <strong>Уведомления</strong>
+              <span>Администратор сразу получает заявку</span>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">💳</div>
+            <div>
+              <strong>Оплата (опционально)</strong>
+              <span>Можно подключить приём платежей</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <h3>Нужен похожий бот?</h3>
+          <p>Сделаю под ваш бизнес: запись, заявки, каталог, уведомления.</p>
+          <a href="https://t.me/cccp812admin" target="_blank">Написать в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const keyboard = document.getElementById('keyboard');
+
+    const replies = {
+      services: {
+        user: '📋 Услуги',
+        bot: 'Наши услуги:\n\n• Консультация — 2 000 ₽\n• Диагностика — 1 500 ₽\n• Полный комплекс — 5 500 ₽\n\nВыберите «Записаться», чтобы выбрать удобное время.'
+      },
+      book: {
+        user: '📅 Записаться',
+        bot: 'Отлично! Выберите день:\n\n• Сегодня\n• Завтра\n• Послезавтра\n\nПосле выбора я попрошу ваш телефон и передам заявку администратору.'
+      },
+      price: {
+        user: '💰 Цены',
+        bot: 'Актуальные цены:\n\n• Консультация — 2 000 ₽\n• Диагностика — 1 500 ₽\n• Полный комплекс — 5 500 ₽\n\nПервичная консультация со скидкой 20%.'
+      },
+      contacts: {
+        user: '📞 Контакты',
+        bot: '📞 +7 (999) 123-45-67\n📍 Москва, ул. Примерная, 10\n⏰ Пн–Сб: 10:00–20:00\n\nИли просто запишитесь через бота — перезвоним.'
+      }
+    };
+
+    function addMsg(text, type) {
+      const div = document.createElement('div');
+      div.className = 'msg msg-' + type;
+      div.innerHTML = text.replace(/\n/g, '<br>') + '<time>сейчас</time>';
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    keyboard.addEventListener('click', (e) => {
+      const btn = e.target.closest('.key');
+      if (!btn) return;
+      const action = btn.dataset.action;
+      const data = replies[action];
+      if (!data) return;
+
+      addMsg(data.user, 'user');
+      setTimeout(() => addMsg(data.bot, 'bot'), 400);
+    });
+  </script>
+</body>
+</html>
