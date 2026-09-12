@@ -6,119 +6,55 @@
   <title>EnglishPro — Онлайн-школа английского</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; color: #0f172a; line-height: 1.65; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-    a { text-decoration: none; color: inherit; }
-    
-    header {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e2e8f0;
-      position: sticky; top: 0; z-index: 50;
-    }
-    header .container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-    .logo { font-weight: 800; font-size: 22px; color: #2563eb; letter-spacing: -0.5px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 13px 26px; border-radius: 10px; font-weight: 600; font-size: 15px;
-      transition: all 0.25s; border: none; cursor: pointer; font-family: inherit;
-    }
-    .btn-primary {
-      background: #2563eb; color: #fff;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-    }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
-    
-    .hero {
-      padding: 90px 0 80px;
-      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37,99,235,0.12), transparent),
-                  linear-gradient(180deg, #f0f7ff 0%, #fff 100%);
-    }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
-    .hero h1 {
-      font-size: 46px; font-weight: 800; line-height: 1.12;
-      letter-spacing: -1.6px; margin-bottom: 18px;
-    }
-    .hero-desc { font-size: 18px; color: #64748b; margin-bottom: 28px; max-width: 480px; }
-    .hero-list { margin-bottom: 0; }
-    .hero-list li {
-      display: flex; align-items: center; gap: 12px;
-      margin-bottom: 12px; font-size: 15.5px; color: #334155;
-    }
-    .hero-list li span {
-      width: 22px; height: 22px; background: #dcfce7; color: #16a34a;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; flex-shrink: 0;
-    }
-    
-    .form-card {
-      background: #fff;
-      padding: 36px 32px;
-      border-radius: 20px;
-      box-shadow: 0 25px 60px rgba(15,23,42,0.12);
-      border: 1px solid #e2e8f0;
-    }
-    .form-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
-    .form-card > p { font-size: 14px; color: #64748b; margin-bottom: 26px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group input {
-      width: 100%; padding: 14px 16px; border: 1.5px solid #e2e8f0;
-      border-radius: 11px; font-size: 15px; font-family: inherit; transition: 0.2s;
-      background: #f8fafc;
-    }
-    .form-group input:focus {
-      outline: none; border-color: #2563eb; background: #fff;
-      box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
-    }
-    
-    .features { padding: 100px 0; }
-    .section-title {
-      text-align: center; font-size: 34px; font-weight: 800;
-      letter-spacing: -1px; margin-bottom: 56px;
-    }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .feature {
-      background: #fff; padding: 36px 28px; border-radius: 18px;
-      border: 1px solid #e2e8f0; transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    }
-    .feature:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-color: #bfdbfe;
-    }
-    .feature-icon {
-      width: 52px; height: 52px; background: #eff6ff; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; margin-bottom: 20px;
-    }
-    .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
-    .feature p { font-size: 14.5px; color: #64748b; line-height: 1.65; }
-    
-    .cta {
-      padding: 90px 0;
-      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-      color: #fff; text-align: center;
-    }
-    .cta h2 { font-size: 34px; font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
-    .cta p { opacity: 0.9; margin-bottom: 32px; font-size: 17px; }
-    .cta .btn { background: #fff; color: #2563eb; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-    .cta .btn:hover { transform: translateY(-2px); }
-    
-    footer {
-      padding: 32px 0; text-align: center; color: #94a3b8;
-      font-size: 14px; border-top: 1px solid #e2e8f0;
-    }
-    
-    @media (max-width: 768px) {
-      .hero-grid, .features-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 32px; }
-      .hero { padding: 60px 0; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',system-ui,sans-serif;color:#0f172a;line-height:1.65}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    a{text-decoration:none;color:inherit}
+    .back-bar{background:#0f172a;color:#fff;font-size:13px}
+    .back-bar .container{display:flex;justify-content:space-between;align-items:center;height:40px}
+    .back-bar a{color:#93c5fd;font-weight:500}
+    .back-bar a:hover{color:#fff}
+    header{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:50}
+    header .container{display:flex;justify-content:space-between;align-items:center;height:70px}
+    .logo{font-weight:800;font-size:22px;color:#2563eb}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 26px;border-radius:10px;font-weight:600;font-size:15px;border:none;cursor:pointer;font-family:inherit;transition:.2s}
+    .btn-primary{background:#2563eb;color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.3)}
+    .btn-primary:hover{background:#1d4ed8;transform:translateY(-1px)}
+    .hero{position:relative;padding:90px 0;color:#fff;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,23,42,.88),rgba(37,99,235,.55)),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=85') center/cover;z-index:0}
+    .hero .container{position:relative;z-index:1}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .hero h1{font-size:44px;font-weight:800;line-height:1.12;letter-spacing:-1.4px;margin-bottom:16px}
+    .hero-desc{font-size:18px;opacity:.9;margin-bottom:24px;max-width:480px}
+    .hero-list li{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:15px}
+    .hero-list li span{width:22px;height:22px;background:rgba(34,197,94,.2);color:#86efac;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+    .form-card{background:#fff;color:#0f172a;padding:32px;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,.25)}
+    .form-card h3{font-size:20px;font-weight:700;margin-bottom:6px}
+    .form-card>p{font-size:14px;color:#64748b;margin-bottom:22px}
+    .form-group{margin-bottom:12px}
+    .form-group input{width:100%;padding:13px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;font-family:inherit;background:#f8fafc}
+    .form-group input:focus{outline:none;border-color:#2563eb;background:#fff}
+    .section{padding:90px 0}
+    .section-title{text-align:center;font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:48px}
+    .features-grid,.teachers-grid,.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .feature,.teacher,.review{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+    .feature-icon{width:48px;height:48px;background:#eff6ff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+    .feature h3,.teacher h3{font-size:17px;font-weight:700;margin-bottom:8px}
+    .feature p,.teacher p,.review p{font-size:14px;color:#64748b;line-height:1.6}
+    .teacher-photo{width:100%;height:160px;border-radius:12px;object-fit:cover;margin-bottom:14px}
+    .stars{color:#f59e0b;margin-bottom:10px;letter-spacing:1px}
+    .review strong{display:block;margin-top:14px;font-size:14px;color:#0f172a}
+    .section-alt{background:#f8fafc}
+    .cta{padding:80px 0;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;text-align:center}
+    .cta h2{font-size:32px;font-weight:800;margin-bottom:12px}
+    .cta p{opacity:.9;margin-bottom:28px}
+    .cta .btn{background:#fff;color:#2563eb}
+    footer{padding:28px 0;text-align:center;color:#94a3b8;font-size:13px;border-top:1px solid #e2e8f0}
+    @media(max-width:768px){.hero-grid,.features-grid,.teachers-grid,.reviews-grid{grid-template-columns:1fr}.hero h1{font-size:30px}}
   </style>
 </head>
 <body>
+  <div class="back-bar"><div class="container"><span>EnglishPro</span><a href="../index.html">← Назад в портфолио</a></div></div>
   <header>
     <div class="container">
       <div class="logo">EnglishPro</div>
@@ -127,11 +63,12 @@
   </header>
 
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="container">
       <div class="hero-grid">
         <div>
           <h1>Английский для работы и путешествий за 3 месяца</h1>
-          <p class="hero-desc">Практические занятия с носителями языка. Гибкий график. Реальный разговорный результат уже с первого месяца.</p>
+          <p class="hero-desc">Практические занятия с носителями. Гибкий график. Реальный разговорный результат с первого месяца.</p>
           <ul class="hero-list">
             <li><span>✓</span> Занятия 2–3 раза в неделю онлайн</li>
             <li><span>✓</span> Персональный план под ваши цели</li>
@@ -142,42 +79,58 @@
         <div class="form-card" id="form">
           <h3>Бесплатный пробный урок</h3>
           <p>Оставьте заявку — перезвоним в течение 15 минут</p>
-          <form onsubmit="event.preventDefault(); alert('Это демо-форма.\\nВ реальном проекте заявка уходит клиенту.');">
-            <div class="form-group">
-              <input type="text" placeholder="Ваше имя" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" placeholder="Телефон" required>
-            </div>
-            <div class="form-group">
-              <input type="text" placeholder="Ваш уровень (если знаете)">
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">Записаться бесплатно</button>
+          <form onsubmit="event.preventDefault();alert('Заявка принята.');">
+            <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
+            <div class="form-group"><input type="tel" placeholder="Телефон" required></div>
+            <div class="form-group"><input type="text" placeholder="Ваш уровень (если знаете)"></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:6px">Записаться бесплатно</button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="features">
+  <section class="section">
     <div class="container">
       <h2 class="section-title">Почему выбирают EnglishPro</h2>
       <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">🗣️</div>
-          <h3>Носители языка</h3>
-          <p>Преподаватели из США и Великобритании с опытом от 5 лет и международными сертификатами CELTA / TESOL.</p>
+        <div class="feature"><div class="feature-icon">🗣️</div><h3>Носители языка</h3><p>Преподаватели из США и Великобритании с опытом от 5 лет.</p></div>
+        <div class="feature"><div class="feature-icon">📅</div><h3>Гибкий график</h3><p>Занятия в Zoom — из любой точки мира.</p></div>
+        <div class="feature"><div class="feature-icon">🎯</div><h3>Измеримый результат</h3><p>Через 3 месяца уверенно общаетесь на работе и в поездках.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Наши преподаватели</h2>
+      <div class="teachers-grid">
+        <div class="teacher">
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Sarah">
+          <h3>Sarah Johnson</h3>
+          <p>США · 8 лет опыта · Business English</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">📅</div>
-          <h3>Гибкий график</h3>
-          <p>Выбирайте удобное время. Занятия проходят в Zoom — занимайтесь из любой точки мира.</p>
+        <div class="teacher">
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="James">
+          <h3>James Wilson</h3>
+          <p>UK · 6 лет опыта · Conversational</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">🎯</div>
-          <h3>Измеримый результат</h3>
-          <p>Через 3 месяца вы уверенно общаетесь в путешествиях, на работе и в повседневной жизни.</p>
+        <div class="teacher">
+          <img class="teacher-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Emily">
+          <h3>Emily Clark</h3>
+          <p>США · 7 лет опыта · Exam prep</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Отзывы учеников</h2>
+      <div class="reviews-grid">
+        <div class="review"><div class="stars">★★★★★</div><p>«За 2 месяца начал свободно говорить на совещаниях.»</p><strong>Игорь · IT</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>«Готовилась к поездке. Теперь не боюсь общаться.»</p><strong>Марина · маркетинг</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>«Удобный график после работы, живые уроки.»</p><strong>Алексей · продажи</strong></div>
       </div>
     </div>
   </section>
@@ -185,13 +138,10 @@
   <section class="cta">
     <div class="container">
       <h2>Начните говорить по-английски уже в этом месяце</h2>
-      <p>Оставьте заявку — подберём удобное время для пробного урока</p>
+      <p>Оставьте заявку — подберём время для пробного урока</p>
       <a href="#form" class="btn">Записаться на урок</a>
     </div>
   </section>
-
-  <footer>
-    <div class="container">© 2026 EnglishPro · Демо-проект для портфолио</div>
-  </footer>
+  <footer><div class="container">© 2026 EnglishPro</div></footer>
 </body>
 </html>

@@ -22,6 +22,7 @@
   </style>
 </head>
 <body>
+  <div style="background:#0f172a;color:#fff;font-size:13px;padding:10px 24px;display:flex;justify-content:space-between;align-items:center"><span>Проект</span><a href="../index.html" style="color:#93c5fd;text-decoration:none">← Назад в портфолио</a></div>
   <section class="hero"><div class="container"><h1>Ремонт квартир под ключ<br>в Москве и области</h1><p>Качественный ремонт с фиксированной сметой. Соблюдаем сроки. Гарантия 2 года на все работы.</p><a href="#calc" class="btn">Рассчитать стоимость</a></div></section>
   <section class="section"><div class="container"><div class="benefits">
     <div class="benefit"><strong>7+</strong><span>лет опыта</span></div>
@@ -38,7 +39,7 @@
     </div>
   </div></section>
   <section class="cta"><div class="container"><h2>Получите бесплатный замер и смету</h2><p>Оставьте заявку — инженер приедет в удобное время</p><a href="#" class="btn" onclick="alert('Демо. Здесь будет форма заявки.');return false;">Оставить заявку</a></div></section>
-  <footer><div class="container">Демо-лендинг для портфолио</div></footer>
+  <footer><div class="container"></div></footer>
   <script>
     function calc(){const a=Number(document.getElementById('area').value)||0;const p=Number(document.getElementById('type').value);document.getElementById('result').textContent=(a*p).toLocaleString('ru-RU')}
     document.getElementById('area').addEventListener('input',calc);document.getElementById('type').addEventListener('change',calc);calc();

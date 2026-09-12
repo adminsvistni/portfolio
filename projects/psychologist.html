@@ -1,39 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Елена Ковалёва — Психолог</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;color:#334155;line-height:1.65}.container{max-width:960px;margin:0 auto;padding:0 24px}a{text-decoration:none;color:inherit}
-header{padding:24px 0}.logo{font-weight:700;font-size:17px;color:#7c3aed}
-.hero{padding:70px 0 90px;text-align:center;background:linear-gradient(180deg,#f5f3ff 0%,#fff 100%)}
-.hero h1{font-size:42px;font-weight:800;color:#1e293b;letter-spacing:-1.2px;margin-bottom:18px;line-height:1.18}
-.hero p{font-size:18px;color:#64748b;max-width:500px;margin:0 auto 32px}
-.btn{display:inline-flex;background:#7c3aed;color:#fff;padding:15px 30px;border-radius:10px;font-weight:600;font-size:15px;transition:.2s;box-shadow:0 4px 16px rgba(124,58,237,.3)}.btn:hover{background:#6d28d9;transform:translateY(-1px)}
-.section{padding:80px 0}.section h2{text-align:center;font-size:30px;font-weight:800;color:#1e293b;margin-bottom:48px;letter-spacing:-.6px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.service{background:#f8fafc;padding:32px 24px;border-radius:16px;text-align:center;border:1px solid #e2e8f0;transition:.25s}
-.service:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.06)}.service-icon{font-size:28px;margin-bottom:14px}
-.service h3{font-size:16px;font-weight:700;color:#1e293b;margin-bottom:8px}.service p{font-size:14px;color:#64748b}
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
-.about-img{height:300px;border-radius:20px;overflow:hidden;background:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=85') center/cover}
-.about h2{text-align:left;margin-bottom:18px}.about p{margin-bottom:14px;color:#64748b;font-size:15.5px}
-.cta{background:linear-gradient(135deg,#f5f3ff,#ede9fe);padding:80px 0;text-align:center}.cta h2{margin-bottom:12px}.cta p{color:#64748b;margin-bottom:28px}
-footer{padding:28px 0;text-align:center;color:#94a3b8;font-size:13px}
-@media(max-width:768px){.services,.about{grid-template-columns:1fr}.hero h1{font-size:30px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Елена Ковалёва — Психолог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',system-ui,sans-serif;color:#334155;line-height:1.65}
+    .container{max-width:960px;margin:0 auto;padding:0 24px}
+    a{text-decoration:none;color:inherit}
+    .back-bar{background:#1e1b4b;color:#fff;font-size:13px}
+    .back-bar .container{display:flex;justify-content:space-between;align-items:center;height:40px}
+    .back-bar a{color:#c4b5fd}
+    header{padding:20px 0}
+    .logo{font-weight:700;font-size:17px;color:#7c3aed}
+    .hero{position:relative;padding:80px 0 90px;color:#fff;text-align:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,27,75,.85),rgba(91,33,182,.7)),url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1600&q=85') center/cover}
+    .hero .container{position:relative;z-index:1}
+    .hero h1{font-size:40px;font-weight:800;letter-spacing:-1.2px;margin-bottom:16px;line-height:1.18}
+    .hero p{font-size:18px;opacity:.9;max-width:500px;margin:0 auto 28px}
+    .btn{display:inline-flex;background:#7c3aed;color:#fff;padding:15px 30px;border-radius:10px;font-weight:600;font-size:15px;box-shadow:0 4px 16px rgba(124,58,237,.3)}
+    .hero .btn{background:#fff;color:#5b21b6}
+    .section{padding:80px 0}
+    .section h2{text-align:center;font-size:28px;font-weight:800;color:#1e293b;margin-bottom:40px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{background:#f8fafc;padding:28px 22px;border-radius:16px;text-align:center;border:1px solid #e2e8f0}
+    .service-icon{font-size:28px;margin-bottom:12px}
+    .service h3{font-size:16px;font-weight:700;color:#1e293b;margin-bottom:8px}
+    .service p{font-size:14px;color:#64748b}
+    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+    .about-img{height:300px;border-radius:20px;background:url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=85') center/cover}
+    .about h2{text-align:left;margin-bottom:16px}
+    .about p{margin-bottom:12px;color:#64748b}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:22px}
+    .stars{color:#f59e0b;margin-bottom:8px}
+    .review p{font-size:14px;color:#64748b}
+    .review strong{display:block;margin-top:12px;font-size:13px;color:#1e293b}
+    .cta{background:linear-gradient(135deg,#f5f3ff,#ede9fe);padding:70px 0;text-align:center}
+    .cta h2{margin-bottom:10px}
+    .cta p{color:#64748b;margin-bottom:24px}
+    footer{padding:24px 0;text-align:center;color:#94a3b8;font-size:13px}
+    @media(max-width:768px){.services,.about,.reviews{grid-template-columns:1fr}.hero h1{font-size:30px}}
+  </style>
 </head>
 <body>
-<header><div class="container"><div class="logo">Елена Ковалёва · Психолог</div></div></header>
-<section class="hero"><div class="container"><h1>Помогу разобраться в себе<br>и найти внутреннюю опору</h1><p>Индивидуальные консультации онлайн. Безопасное и поддерживающее пространство для разговора о важном.</p><a href="#contact" class="btn">Записаться на консультацию</a></div></section>
-<section class="section"><div class="container"><h2>С чем я работаю</h2><div class="services">
-<div class="service"><div class="service-icon">🌊</div><h3>Тревога и стресс</h3><p>Помогаю снизить уровень тревоги и научиться справляться со стрессовыми ситуациями.</p></div>
-<div class="service"><div class="service-icon">💬</div><h3>Отношения</h3><p>Разбираем сложности в личных и рабочих отношениях, учимся выстраивать здоровые границы.</p></div>
-<div class="service"><div class="service-icon">🌱</div><h3>Самооценка</h3><p>Работаем с неуверенностью, перфекционизмом и внутренним критиком.</p></div>
-</div></div></section>
-<section class="section" style="background:#fafafa"><div class="container"><div class="about"><div class="about-img"></div><div><h2>Обо мне</h2><p>Практикующий психолог с опытом более 8 лет. Работаю в гештальт-подходе.</p><p>Образование: МГУ, факультет психологии. Регулярно прохожу супервизии и повышение квалификации.</p><p>Консультации проходят онлайн в удобное для вас время.</p></div></div></div></section>
-<section class="cta" id="contact"><div class="container"><h2>Запишитесь на первую встречу</h2><p>Напишите мне в Telegram — подберём удобное время</p><a href="#" class="btn" onclick="alert('Демо-кнопка. Укажите реальный контакт.');return false;">Написать в Telegram</a></div></section>
-<footer><div class="container">Демо-лендинг для портфолио</div></footer>
+  <div class="back-bar"><div class="container"><span>Психолог</span><a href="../index.html">← Назад в портфолио</a></div></div>
+  <header><div class="container"><div class="logo">Елена Ковалёва · Психолог</div></div></header>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <h1>Помогу разобраться в себе<br>и найти внутреннюю опору</h1>
+      <p>Индивидуальные консультации онлайн. Безопасное пространство для разговора о важном.</p>
+      <a href="#contact" class="btn">Записаться на консультацию</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>С чем я работаю</h2>
+      <div class="services">
+        <div class="service"><div class="service-icon">🌊</div><h3>Тревога и стресс</h3><p>Снижаем тревогу и учимся справляться со стрессом.</p></div>
+        <div class="service"><div class="service-icon">💬</div><h3>Отношения</h3><p>Сложности в личных и рабочих связях, границы.</p></div>
+        <div class="service"><div class="service-icon">🌱</div><h3>Самооценка</h3><p>Неуверенность, перфекционизм, внутренний критик.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fafafa">
+    <div class="container">
+      <div class="about">
+        <div class="about-img"></div>
+        <div>
+          <h2>Обо мне</h2>
+          <p>Практикующий психолог с опытом более 8 лет. Работаю в гештальт-подходе.</p>
+          <p>Образование: МГУ, факультет психологии. Регулярные супервизии и повышение квалификации.</p>
+          <p>Консультации онлайн в удобное для вас время.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Отзывы клиентов</h2>
+      <div class="reviews">
+        <div class="review"><div class="stars">★★★★★</div><p>«После нескольких встреч стало легче с тревогой. Очень бережный подход.»</p><strong>Анна</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>«Наконец разобрался с выгоранием на работе. Рекомендую.»</p><strong>Сергей</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>«Комфортная атмосфера, без давления. Помогало уже с первой сессии.»</p><strong>Мария</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Запишитесь на первую встречу</h2>
+      <p>Напишите в Telegram — подберём удобное время</p>
+      <a href="https://t.me/cccp812admin" class="btn" target="_blank">Написать в Telegram</a>
+    </div>
+  </section>
+  <footer><div class="container">© 2026 Елена Ковалёва</div></footer>
 </body>
 </html>
