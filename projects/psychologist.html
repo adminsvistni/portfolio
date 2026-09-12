@@ -3,43 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Психолог | Демо-лендинг</title>
+  <title>Елена Ковалёва — Психолог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #334155; line-height: 1.6; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    body { font-family: 'Inter', sans-serif; color: #334155; line-height: 1.65; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    a { text-decoration: none; color: inherit; }
     
-    header { padding: 20px 0; }
-    .logo { font-weight: 600; font-size: 18px; color: #7c3aed; }
+    header { padding: 24px 0; }
+    .logo { font-weight: 700; font-size: 17px; color: #7c3aed; }
     
-    .hero { padding: 60px 0 80px; text-align: center; }
-    .hero h1 { font-size: 36px; color: #1e293b; margin-bottom: 16px; letter-spacing: -0.5px; }
-    .hero p { font-size: 18px; color: #64748b; max-width: 520px; margin: 0 auto 28px; }
-    .btn { display: inline-block; background: #7c3aed; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+    .hero {
+      padding: 60px 0 90px;
+      text-align: center;
+      background: linear-gradient(180deg, #f5f3ff 0%, #fff 100%);
+    }
+    .hero h1 {
+      font-size: 40px; font-weight: 800; color: #1e293b;
+      letter-spacing: -1px; margin-bottom: 18px; line-height: 1.2;
+    }
+    .hero p { font-size: 18px; color: #64748b; max-width: 500px; margin: 0 auto 32px; }
+    .btn {
+      display: inline-flex; background: #7c3aed; color: #fff;
+      padding: 15px 30px; border-radius: 10px; font-weight: 600; font-size: 15px;
+      transition: 0.2s; box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+    }
     .btn:hover { background: #6d28d9; }
     
-    .section { padding: 60px 0; }
-    .section h2 { text-align: center; font-size: 26px; color: #1e293b; margin-bottom: 40px; }
+    .section { padding: 70px 0; }
+    .section h2 { text-align: center; font-size: 28px; font-weight: 800; color: #1e293b; margin-bottom: 44px; letter-spacing: -0.5px; }
     
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .service { background: #f8fafc; padding: 28px 22px; border-radius: 12px; text-align: center; }
-    .service h3 { font-size: 16px; margin-bottom: 8px; color: #1e293b; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service {
+      background: #f8fafc; padding: 32px 24px; border-radius: 16px;
+      text-align: center; border: 1px solid #e2e8f0; transition: 0.25s;
+    }
+    .service:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+    .service-icon { font-size: 28px; margin-bottom: 14px; }
+    .service h3 { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
     .service p { font-size: 14px; color: #64748b; }
     
-    .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
-    .about-img { background: linear-gradient(135deg, #ede9fe, #fce7f3); height: 260px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #7c3aed; font-size: 14px; }
-    .about h2 { text-align: left; margin-bottom: 16px; }
-    .about p { margin-bottom: 12px; color: #64748b; }
+    .about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+    .about-img {
+      height: 300px; border-radius: 20px; overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80') center/cover;
+    }
+    .about h2 { text-align: left; margin-bottom: 18px; }
+    .about p { margin-bottom: 14px; color: #64748b; font-size: 15px; }
     
-    .cta { background: #f5f3ff; padding: 60px 0; text-align: center; }
+    .cta {
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      padding: 70px 0; text-align: center;
+    }
     .cta h2 { margin-bottom: 12px; }
-    .cta p { color: #64748b; margin-bottom: 24px; }
+    .cta p { color: #64748b; margin-bottom: 28px; }
     
-    footer { padding: 24px 0; text-align: center; color: #94a3b8; font-size: 13px; }
+    footer { padding: 28px 0; text-align: center; color: #94a3b8; font-size: 13px; }
     
     @media (max-width: 768px) {
       .services, .about { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
+      .hero h1 { font-size: 30px; }
     }
   </style>
 </head>
@@ -53,7 +77,7 @@
   <section class="hero">
     <div class="container">
       <h1>Помогу разобраться в себе<br>и найти внутреннюю опору</h1>
-      <p>Индивидуальные консультации онлайн. Безопасное пространство для разговора о важном.</p>
+      <p>Индивидуальные консультации онлайн. Безопасное и поддерживающее пространство для разговора о важном.</p>
       <a href="#contact" class="btn">Записаться на консультацию</a>
     </div>
   </section>
@@ -63,16 +87,19 @@
       <h2>С чем я работаю</h2>
       <div class="services">
         <div class="service">
+          <div class="service-icon">🌊</div>
           <h3>Тревога и стресс</h3>
           <p>Помогаю снизить уровень тревоги и научиться справляться со стрессовыми ситуациями.</p>
         </div>
         <div class="service">
+          <div class="service-icon">💬</div>
           <h3>Отношения</h3>
-          <p>Разбираем сложности в личных и рабочих отношениях, учимся выстраивать границы.</p>
+          <p>Разбираем сложности в личных и рабочих отношениях, учимся выстраивать здоровые границы.</p>
         </div>
         <div class="service">
+          <div class="service-icon">🌱</div>
           <h3>Самооценка</h3>
-          <p>Работаем с неуверенностью в себе, перфекционизмом и внутренним критиком.</p>
+          <p>Работаем с неуверенностью, перфекционизмом и внутренним критиком.</p>
         </div>
       </div>
     </div>
@@ -81,12 +108,12 @@
   <section class="section" style="background:#fafafa;">
     <div class="container">
       <div class="about">
-        <div class="about-img">Фото специалиста</div>
+        <div class="about-img"></div>
         <div>
           <h2>Обо мне</h2>
           <p>Практикующий психолог с опытом более 8 лет. Работаю в гештальт-подходе.</p>
           <p>Образование: МГУ, факультет психологии. Регулярно прохожу супервизии и повышение квалификации.</p>
-          <p>Консультации проходят онлайн в удобное для вас время.</p>
+          <p>Консультации проходят онлайн в удобное для вас время. Первая встреча — знакомство и определение запроса.</p>
         </div>
       </div>
     </div>
