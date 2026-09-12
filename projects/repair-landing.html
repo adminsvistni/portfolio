@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ремонт квартир | Демо-лендинг</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  linear-gradient(135deg, #1e3a5f, #0f172a);
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 40px; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero p { font-size: 18px; opacity: 0.9; max-width: 560px; margin: 0 auto 28px; }
+    .btn {
+      display: inline-block;
+      background: #f59e0b;
+      color: #1a1a1a;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .btn:hover { background: #d97706; }
+    
+    .section { padding: 70px 0; }
+    .section-title { text-align: center; font-size: 28px; margin-bottom: 40px; }
+    
+    .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .benefit { padding: 20px; }
+    .benefit strong { display: block; font-size: 28px; color: #f59e0b; margin-bottom: 8px; }
+    .benefit span { font-size: 14px; color: #64748b; }
+    
+    .calc-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .calc-box h3 { margin-bottom: 20px; text-align: center; }
+    .calc-row { margin-bottom: 16px; }
+    .calc-row label { display: block; font-size: 14px; margin-bottom: 6px; color: #64748b; }
+    .calc-row select, .calc-row input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .calc-result {
+      margin-top: 24px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    .cta {
+      background: #0f172a;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .cta h2 { margin-bottom: 12px; }
+    .cta p { opacity: 0.8; margin-bottom: 24px; }
+    
+    footer { padding: 24px 0; text-align: center; color: #94a3b8; font-size: 13px; }
+    
+    @media (max-width: 768px) {
+      .benefits { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>Ремонт квартир под ключ<br>в Москве и области</h1>
+      <p>Качественный ремонт с фиксированной сметой. Соблюдаем сроки. Гарантия 2 года.</p>
+      <a href="#calc" class="btn">Рассчитать стоимость</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="benefits">
+        <div class="benefit">
+          <strong>7+</strong>
+          <span>лет опыта</span>
+        </div>
+        <div class="benefit">
+          <strong>240+</strong>
+          <span>выполненных объектов</span>
+        </div>
+        <div class="benefit">
+          <strong>2 года</strong>
+          <span>гарантии</span>
+        </div>
+        <div class="benefit">
+          <strong>0</strong>
+          <span>скрытых платежей</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calc" style="background:#f1f5f9;">
+    <div class="container">
+      <h2 class="section-title">Калькулятор стоимости</h2>
+      <div class="calc-box">
+        <h3>Примерный расчёт</h3>
+        <div class="calc-row">
+          <label>Площадь квартиры (м²)</label>
+          <input type="number" id="area" value="50" min="20" max="200">
+        </div>
+        <div class="calc-row">
+          <label>Тип ремонта</label>
+          <select id="type">
+            <option value="12000">Косметический</option>
+            <option value="18000" selected>Капитальный</option>
+            <option value="25000">Дизайнерский</option>
+          </select>
+        </div>
+        <div class="calc-result">
+          от <span id="result">900 000</span> ₽
+        </div>
+        <p style="text-align:center; font-size:13px; color:#94a3b8; margin-top:12px;">
+          Точная смета после замера
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Получите бесплатный замер и смету</h2>
+      <p>Оставьте заявку — инженер приедет в удобное время</p>
+      <a href="#" class="btn" onclick="alert('Демо. Здесь будет форма или мессенджер.'); return false;">Оставить заявку</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Демо-лендинг для портфолио</div>
+  </footer>
+
+  <script>
+    function calc() {
+      const area = Number(document.getElementById('area').value) || 0;
+      const price = Number(document.getElementById('type').value);
+      const total = area * price;
+      document.getElementById('result').textContent = total.toLocaleString('ru-RU');
+    }
+    document.getElementById('area').addEventListener('input', calc);
+    document.getElementById('type').addEventListener('change', calc);
+    calc();
+  </script>
+</body>
+</html>

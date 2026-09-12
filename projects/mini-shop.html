@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мини-магазин | Демо</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    header { background: white; border-bottom: 1px solid #e2e8f0; padding: 16px 0; position: sticky; top: 0; z-index: 50; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 20px; color: #2563eb; }
+    .cart-btn { background: #2563eb; color: white; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 500; }
+    
+    .hero { padding: 40px 0 20px; text-align: center; }
+    .hero h1 { font-size: 28px; margin-bottom: 8px; }
+    .hero p { color: #64748b; }
+    
+    .filters { display: flex; gap: 10px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+    .filter-btn { padding: 8px 16px; border: 1px solid #e2e8f0; background: white; border-radius: 20px; cursor: pointer; font-size: 14px; }
+    .filter-btn.active, .filter-btn:hover { background: #2563eb; color: white; border-color: #2563eb; }
+    
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; padding-bottom: 60px; }
+    .product { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: transform 0.2s; }
+    .product:hover { transform: translateY(-4px); }
+    .product-img { height: 160px; background: linear-gradient(135deg, #e0e7ff, #fce7f3); display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .product-body { padding: 16px; }
+    .product h3 { font-size: 16px; margin-bottom: 6px; }
+    .product .price { font-weight: 700; color: #2563eb; margin-bottom: 12px; }
+    .add-btn { width: 100%; padding: 10px; background: #f1f5f9; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; }
+    .add-btn:hover { background: #2563eb; color: white; }
+    
+    .cart-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; background: white; box-shadow: -4px 0 20px rgba(0,0,0,0.1); transition: right 0.3s; z-index: 100; padding: 20px; }
+    .cart-panel.open { right: 0; }
+    .cart-panel h3 { margin-bottom: 16px; }
+    .cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+    .cart-total { margin-top: 20px; font-weight: 700; font-size: 18px; }
+    .close-cart { background: none; border: none; font-size: 20px; cursor: pointer; float: right; }
+    
+    footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">ShopDemo</div>
+      <button class="cart-btn" onclick="toggleCart()">Корзина (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Каталог товаров</h1>
+      <p>Демонстрация простого интернет-магазина</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="clothes">Одежда</button>
+      <button class="filter-btn" data-filter="accessories">Аксессуары</button>
+      <button class="filter-btn" data-filter="home">Для дома</button>
+    </div>
+
+    <div class="products" id="products"></div>
+  </div>
+
+  <div class="cart-panel" id="cart">
+    <button class="close-cart" onclick="toggleCart()">×</button>
+    <h3>Корзина</h3>
+    <div id="cart-items"></div>
+    <div class="cart-total">Итого: <span id="cart-total">0</span> ₽</div>
+  </div>
+
+  <footer>Демо-проект для портфолио</footer>
+
+  <script>
+    const products = [
+      { id: 1, name: 'Футболка базовая', price: 1490, category: 'clothes', emoji: '👕' },
+      { id: 2, name: 'Джинсы slim', price: 3990, category: 'clothes', emoji: '👖' },
+      { id: 3, name: 'Кроссовки', price: 5990, category: 'clothes', emoji: '👟' },
+      { id: 4, name: 'Рюкзак городской', price: 2790, category: 'accessories', emoji: '🎒' },
+      { id: 5, name: 'Часы наручные', price: 4590, category: 'accessories', emoji: '⌚' },
+      { id: 6, name: 'Подушка декоративная', price: 990, category: 'home', emoji: '🛋️' },
+      { id: 7, name: 'Светильник', price: 2490, category: 'home', emoji: '💡' },
+      { id: 8, name: 'Кружка керамическая', price: 690, category: 'home', emoji: '☕' },
+    ];
+
+    let cart = [];
+    let currentFilter = 'all';
+
+    function renderProducts() {
+      const list = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+      document.getElementById('products').innerHTML = list.map(p => `
+        <div class="product">
+          <div class="product-img">${p.emoji}</div>
+          <div class="product-body">
+            <h3>${p.name}</h3>
+            <div class="price">${p.price.toLocaleString()} ₽</div>
+            <button class="add-btn" onclick="addToCart(${p.id})">В корзину</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      cart.push(product);
+      updateCart();
+    }
+
+    function updateCart() {
+      document.getElementById('cart-count').textContent = cart.length;
+      document.getElementById('cart-items').innerHTML = cart.map(p => `
+        <div class="cart-item"><span>${p.name}</span><span>${p.price} ₽</span></div>
+      `).join('') || '<p style="color:#94a3b8;font-size:14px;">Пусто</p>';
+      document.getElementById('cart-total').textContent = cart.reduce((s, p) => s + p.price, 0).toLocaleString();
+    }
+
+    function toggleCart() {
+      document.getElementById('cart').classList.toggle('open');
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderProducts();
+      });
+    });
+
+    renderProducts();
+  </script>
+</body>
+</html>

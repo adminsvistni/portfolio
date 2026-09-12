@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Психолог | Демо-лендинг</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #334155; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    
+    header { padding: 20px 0; }
+    .logo { font-weight: 600; font-size: 18px; color: #7c3aed; }
+    
+    .hero { padding: 60px 0 80px; text-align: center; }
+    .hero h1 { font-size: 36px; color: #1e293b; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .hero p { font-size: 18px; color: #64748b; max-width: 520px; margin: 0 auto 28px; }
+    .btn { display: inline-block; background: #7c3aed; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+    .btn:hover { background: #6d28d9; }
+    
+    .section { padding: 60px 0; }
+    .section h2 { text-align: center; font-size: 26px; color: #1e293b; margin-bottom: 40px; }
+    
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service { background: #f8fafc; padding: 28px 22px; border-radius: 12px; text-align: center; }
+    .service h3 { font-size: 16px; margin-bottom: 8px; color: #1e293b; }
+    .service p { font-size: 14px; color: #64748b; }
+    
+    .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+    .about-img { background: linear-gradient(135deg, #ede9fe, #fce7f3); height: 260px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #7c3aed; font-size: 14px; }
+    .about h2 { text-align: left; margin-bottom: 16px; }
+    .about p { margin-bottom: 12px; color: #64748b; }
+    
+    .cta { background: #f5f3ff; padding: 60px 0; text-align: center; }
+    .cta h2 { margin-bottom: 12px; }
+    .cta p { color: #64748b; margin-bottom: 24px; }
+    
+    footer { padding: 24px 0; text-align: center; color: #94a3b8; font-size: 13px; }
+    
+    @media (max-width: 768px) {
+      .services, .about { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Елена Ковалёва · Психолог</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Помогу разобраться в себе<br>и найти внутреннюю опору</h1>
+      <p>Индивидуальные консультации онлайн. Безопасное пространство для разговора о важном.</p>
+      <a href="#contact" class="btn">Записаться на консультацию</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>С чем я работаю</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Тревога и стресс</h3>
+          <p>Помогаю снизить уровень тревоги и научиться справляться со стрессовыми ситуациями.</p>
+        </div>
+        <div class="service">
+          <h3>Отношения</h3>
+          <p>Разбираем сложности в личных и рабочих отношениях, учимся выстраивать границы.</p>
+        </div>
+        <div class="service">
+          <h3>Самооценка</h3>
+          <p>Работаем с неуверенностью в себе, перфекционизмом и внутренним критиком.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fafafa;">
+    <div class="container">
+      <div class="about">
+        <div class="about-img">Фото специалиста</div>
+        <div>
+          <h2>Обо мне</h2>
+          <p>Практикующий психолог с опытом более 8 лет. Работаю в гештальт-подходе.</p>
+          <p>Образование: МГУ, факультет психологии. Регулярно прохожу супервизии и повышение квалификации.</p>
+          <p>Консультации проходят онлайн в удобное для вас время.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Запишитесь на первую встречу</h2>
+      <p>Напишите мне в Telegram — подберём удобное время</p>
+      <a href="#" class="btn" onclick="alert('Демо-кнопка. Укажите реальный контакт.'); return false;">Написать в Telegram</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Демо-лендинг для портфолио</div>
+  </footer>
+</body>
+</html>

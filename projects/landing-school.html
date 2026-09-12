@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн-школа английского | Демо-лендинг</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.5; color: #1a1a1a; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Header */
+    header { background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 50; }
+    header .container { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .logo { font-weight: 700; font-size: 20px; color: #2563eb; }
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.2s; border: none; cursor: pointer; font-size: 15px; }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    
+    /* Hero */
+    .hero { padding: 80px 0; background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: 42px; line-height: 1.15; margin-bottom: 16px; letter-spacing: -1px; }
+    .hero p { font-size: 18px; color: #64748b; margin-bottom: 28px; }
+    .hero-form { background: white; padding: 28px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+    .hero-form h3 { margin-bottom: 16px; font-size: 18px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group input { width: 100%; padding: 12px 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 15px; }
+    .form-group input:focus { outline: none; border-color: #2563eb; }
+    
+    /* Features */
+    .features { padding: 80px 0; }
+    .section-title { text-align: center; font-size: 32px; margin-bottom: 48px; letter-spacing: -0.5px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card { background: #f8fafc; padding: 28px; border-radius: 12px; }
+    .feature-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .feature-card p { color: #64748b; font-size: 14px; }
+    
+    /* CTA */
+    .cta { padding: 80px 0; background: #2563eb; color: white; text-align: center; }
+    .cta h2 { font-size: 32px; margin-bottom: 12px; }
+    .cta p { opacity: 0.9; margin-bottom: 28px; }
+    .cta .btn { background: white; color: #2563eb; }
+    
+    footer { padding: 32px 0; text-align: center; color: #94a3b8; font-size: 14px; }
+    
+    @media (max-width: 768px) {
+      .hero-grid, .features-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">EnglishPro</div>
+      <a href="#form" class="btn btn-primary">Записаться</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>Английский для работы и путешествий за 3 месяца</h1>
+          <p>Практические занятия с носителями. Гибкий график. Результат с первого месяца.</p>
+          <ul style="color:#64748b; margin-bottom:24px;">
+            <li>✓ Занятия 2–3 раза в неделю</li>
+            <li>✓ Персональный план обучения</li>
+            <li>✓ Домашние задания с проверкой</li>
+          </ul>
+        </div>
+        <div class="hero-form" id="form">
+          <h3>Запишитесь на бесплатный урок</h3>
+          <form onsubmit="event.preventDefault(); alert('Это демо-форма. В реальном проекте здесь будет отправка заявки.');">
+            <div class="form-group">
+              <input type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Телефон" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Уровень (если знаете)">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Записаться бесплатно</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Носители языка</h3>
+          <p>Занятия проводят преподаватели из США и Великобритании с опытом от 5 лет.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Гибкий график</h3>
+          <p>Выбирайте удобное время. Занятия проходят онлайн в Zoom.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Результат</h3>
+          <p>Через 3 месяца вы сможете уверенно общаться в путешествиях и на работе.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Начните говорить по-английски уже в этом месяце</h2>
+      <p>Оставьте заявку — мы перезвоним и подберём удобное время для пробного урока</p>
+      <a href="#form" class="btn">Записаться на урок</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 EnglishPro. Демо-лендинг для портфолио.</p>
+    </div>
+  </footer>
+</body>
+</html>
