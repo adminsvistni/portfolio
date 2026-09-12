@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Веб-разработчик | Портфолио</title>
+  <title>Виктор — веб-разработчик | Портфолио</title>
+  <meta name="description" content="Веб-разработчик. Создаю лендинги, сайты на WordPress и Tilda, Telegram-ботов. Быстро, качественно, с фокусом на результат.">
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <a href="#" class="logo">WebDev</a>
+      <a href="#" class="logo">Виктор</a>
       <nav class="nav">
         <a href="#projects">Проекты</a>
         <a href="#skills">Навыки</a>
         <a href="#services">Услуги</a>
         <a href="#contact" class="btn btn-primary">Связаться</a>
       </nav>
-      <button class="burger" aria-label="Меню">
+      <button class="burger" aria-label="Меню" id="burger">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-badge">Доступен для новых проектов</div>
-        <h1>Создаю сайты, которые помогают бизнесу расти</h1>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Доступен для новых проектов
+        </div>
+        <h1>Создаю сайты,<br>которые приносят<br>результат бизнесу</h1>
         <p class="hero-desc">
-          Делаю лендинги, сайты на WordPress и Tilda, Telegram-ботов. 
-          Фокус на скорости, удобстве и результате для клиента.
+          Меня зовут Виктор. Специализируюсь на лендингах, сайтах на WordPress и Tilda, а также Telegram-ботах. 
+          Работаю быстро, чисто и с упором на конверсию.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Смотреть проекты</a>
@@ -40,12 +42,12 @@
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <strong>20+</strong>
-            <span>проектов</span>
+            <strong>25+</strong>
+            <span>реализованных проектов</span>
           </div>
           <div class="stat-item">
             <strong>100%</strong>
-            <span>в срок</span>
+            <span>сдача в срок</span>
           </div>
           <div class="stat-item">
             <strong>4.9</strong>
@@ -56,23 +58,24 @@
     </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header">
+        <span class="section-label">Портфолио</span>
         <h2>Избранные проекты</h2>
-        <p>Реальные примеры работ. Нажмите на карточку, чтобы открыть демо.</p>
+        <p>Несколько работ, которые показывают подход к дизайну, вёрстке и вниманию к деталям. Нажмите на карточку, чтобы открыть демо.</p>
       </div>
 
       <div class="projects-grid">
-        <!-- 1. Онлайн-школа -->
         <a href="projects/landing-school.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Онлайн-школа">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=85" alt="Лендинг онлайн-школы" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
             <h3>Лендинг онлайн-школы английского</h3>
-            <p>Продающий одностраничник с формой заявки, преимуществами и призывом к действию. Адаптивная вёрстка.</p>
+            <p>Продающий одностраничник с сильным оффером, формой заявки и блоком преимуществ. Полностью адаптивный.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
               <span>JavaScript</span>
@@ -81,15 +84,14 @@
           </div>
         </a>
 
-        <!-- 2. Репетитор -->
         <a href="projects/tutor-site.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Репетитор">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=85" alt="Сайт репетитора" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
             <h3>Сайт репетитора по математике</h3>
-            <p>Сайт-визитка с услугами, ценами и удобной записью. Чистый дизайн, фокус на доверии.</p>
+            <p>Сайт-визитка с услугами, ценами и удобной записью. Чистый дизайн, акцент на доверии и экспертизе.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
               <span>Многостраничный</span>
@@ -98,15 +100,14 @@
           </div>
         </a>
 
-        <!-- 3. Ремонт -->
         <a href="projects/repair-landing.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="Ремонт квартир">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=85" alt="Ремонт квартир" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
             <h3>Лендинг ремонтной компании</h3>
-            <p>Яркий лендинг с интерактивным калькулятором стоимости, преимуществами и формой заявки.</p>
+            <p>Яркий лендинг с интерактивным калькулятором стоимости, цифрами и формой заявки на замер.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
               <span>JavaScript</span>
@@ -115,32 +116,30 @@
           </div>
         </a>
 
-        <!-- 4. Мини-магазин -->
         <a href="projects/mini-shop.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Интернет-магазин">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=85" alt="Интернет-магазин" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
             <h3>Мини интернет-магазин</h3>
-            <p>Каталог товаров с фильтрами, корзиной и современным интерфейсом. Готовая основа для небольшого магазина.</p>
+            <p>Каталог с фильтрами, карточками товаров и рабочей корзиной. Готовая основа для небольшого магазина.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
               <span>JavaScript</span>
-              <span>Корзина</span>
+              <span>E-commerce</span>
             </div>
           </div>
         </a>
 
-        <!-- 5. Психолог -->
         <a href="projects/psychologist.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Психолог">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&q=85" alt="Психолог" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
             <h3>Лендинг для психолога</h3>
-            <p>Спокойный доверительный дизайн. Блоки об услугах, подходе специалиста и запись на консультацию.</p>
+            <p>Спокойный и доверительный дизайн. Блоки об услугах, подходе специалиста и запись на консультацию.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
               <span>Адаптив</span>
@@ -149,14 +148,13 @@
           </div>
         </a>
 
-        <!-- 6. Кафе / ресторан -->
         <a href="projects/cafe.html" class="project-card" target="_blank">
           <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Кафе">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=85" alt="Кофейня" loading="lazy">
             <div class="project-overlay"><span>Открыть демо →</span></div>
           </div>
           <div class="project-content">
-            <h3>Сайт кафе / ресторана</h3>
+            <h3>Сайт кофейни «Зёрна»</h3>
             <p>Аппетитный лендинг с меню, атмосферой заведения и формой бронирования столика.</p>
             <div class="project-tags">
               <span>HTML/CSS</span>
@@ -169,60 +167,64 @@
     </div>
   </section>
 
+  <!-- Skills -->
   <section id="skills" class="section section-alt">
     <div class="container">
       <div class="section-header">
+        <span class="section-label">Экспертиза</span>
         <h2>Навыки и технологии</h2>
-        <p>С чем работаю каждый день</p>
+        <p>Инструменты и подходы, с которыми работаю каждый день</p>
       </div>
       <div class="skills-grid">
         <div class="skill-card">
           <h4>Вёрстка и фронтенд</h4>
           <ul>
-            <li>HTML5 / CSS3 / SCSS</li>
-            <li>JavaScript (ES6+)</li>
+            <li>HTML5, CSS3, современный JavaScript</li>
             <li>Адаптивная и кроссбраузерная вёрстка</li>
-            <li>Работа с макетами Figma / Photoshop</li>
+            <li>Работа с макетами из Figma</li>
+            <li>Анимации и микровзаимодействия</li>
           </ul>
         </div>
         <div class="skill-card">
           <h4>CMS и конструкторы</h4>
           <ul>
             <li>WordPress + Elementor / Gutenberg</li>
-            <li>Tilda</li>
+            <li>Tilda (включая Zero Block)</li>
             <li>Базовая работа с 1C-Bitrix</li>
-            <li>Настройка форм и аналитики</li>
+            <li>Настройка форм, CRM и аналитики</li>
           </ul>
         </div>
         <div class="skill-card">
           <h4>Дополнительно</h4>
           <ul>
-            <li>Telegram-боты (aiogram / Grammy)</li>
-            <li>Интеграции (CRM, платежи, почта)</li>
+            <li>Telegram-боты</li>
+            <li>Интеграции (оплата, CRM, почта)</li>
             <li>Оптимизация скорости загрузки</li>
-            <li>Git / GitHub</li>
+            <li>Git и работа с хостингом</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <div class="section-header">
+        <span class="section-label">Услуги</span>
         <h2>Чем могу помочь</h2>
-        <p>Основные направления работы</p>
+        <p>Основные направления, с которыми работаю чаще всего</p>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-num">01</div>
           <h3>Лендинги под ключ</h3>
-          <p>Продающие одностраничники с нуля или по вашему макету. Быстро, адаптивно, с формами и аналитикой.</p>
+          <p>Продающие одностраничники с нуля или по вашему макету. Быстро, адаптивно, с формами и базовой аналитикой.</p>
         </div>
         <div class="service-card">
           <div class="service-num">02</div>
           <h3>Сайты на WordPress и Tilda</h3>
-          <p>Удобные в управлении сайты для бизнеса, специалистов и небольших компаний.</p>
+          <p>Удобные в управлении сайты для бизнеса, специалистов и небольших компаний. С возможностью самостоятельно менять контент.</p>
         </div>
         <div class="service-card">
           <div class="service-num">03</div>
@@ -238,24 +240,34 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section section-alt">
     <div class="container">
       <div class="contact-block">
         <div class="contact-info">
+          <span class="section-label">Контакты</span>
           <h2>Давайте обсудим ваш проект</h2>
           <p>Напишите, что нужно сделать. Отвечу в течение нескольких часов, предложу решение, сроки и ориентир по цене.</p>
+          
           <ul class="contact-list">
             <li>
-              <strong>Telegram</strong>
-              <span>@cccp812admin</span>
+              <div class="icon">✈️</div>
+              <div>
+                <strong>Telegram</strong>
+                <span>@cccp812admin</span>
+              </div>
             </li>
             <li>
-              <strong>Email</strong>
-              <span>cccp812@gmail.com</span>
+              <div class="icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>cccp812@gmail.com</span>
+              </div>
             </li>
           </ul>
         </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Это демо-форма. Замените на реальную или просто используйте контакты слева.');">
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Это демо-форма.\\n\\nЗамените её на реальную обработку или просто используйте контакты слева.');">
           <div class="form-group">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
@@ -266,7 +278,7 @@
           </div>
           <div class="form-group">
             <label for="message">Кратко о задаче</label>
-            <textarea id="message" name="message" rows="4" placeholder="Что нужно сделать?" required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Что нужно сделать? Есть ли сроки и примерный бюджет?" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">Отправить сообщение</button>
         </form>
@@ -276,7 +288,12 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Веб-разработчик. Все права защищены.</p>
+      <p>© 2026 Виктор. Все права защищены.</p>
+      <div class="footer-links">
+        <a href="#projects">Проекты</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+      </div>
     </div>
   </footer>
 

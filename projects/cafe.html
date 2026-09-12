@@ -1,157 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кофейня «Зёрна» — Демо</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: #1c1917; line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    a { text-decoration: none; color: inherit; }
-    
-    header {
-      position: absolute; top: 0; left: 0; right: 0; z-index: 20;
-      padding: 24px 0;
-    }
-    header .container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 800; font-size: 22px; color: #fff; }
-    .btn-header {
-      background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);
-      padding: 10px 22px; border-radius: 8px; font-weight: 600; font-size: 14px; backdrop-filter: blur(8px);
-    }
-    
-    .hero {
-      background: linear-gradient(rgba(28,25,23,0.55), rgba(28,25,23,0.7)),
-                  url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80') center/cover;
-      color: #fff;
-      padding: 160px 0 120px;
-      text-align: center;
-    }
-    .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; }
-    .hero p { font-size: 18px; opacity: 0.9; max-width: 480px; margin: 0 auto 32px; }
-    .btn {
-      display: inline-flex; background: #d97706; color: #fff;
-      padding: 15px 32px; border-radius: 10px; font-weight: 700; font-size: 16px;
-      transition: 0.2s;
-    }
-    .btn:hover { background: #b45309; }
-    
-    .section { padding: 80px 0; }
-    .section-title { text-align: center; font-size: 30px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 48px; }
-    
-    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .menu-card {
-      background: #fff; border-radius: 16px; overflow: hidden;
-      border: 1px solid #e7e5e4; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: 0.25s;
-    }
-    .menu-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-    .menu-img { height: 180px; overflow: hidden; }
-    .menu-img img { width: 100%; height: 100%; object-fit: cover; }
-    .menu-body { padding: 20px; }
-    .menu-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-    .menu-body p { font-size: 14px; color: #78716c; margin-bottom: 12px; }
-    .menu-price { font-weight: 800; font-size: 18px; color: #d97706; }
-    
-    .about-section { background: #fafaf9; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .about-grid h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
-    .about-grid p { color: #78716c; margin-bottom: 12px; font-size: 15px; }
-    
-    .cta {
-      background: #1c1917; color: #fff; padding: 80px 0; text-align: center;
-    }
-    .cta h2 { font-size: 30px; font-weight: 800; margin-bottom: 12px; }
-    .cta p { opacity: 0.8; margin-bottom: 28px; }
-    
-    footer { padding: 28px 0; text-align: center; color: #a8a29e; font-size: 13px; }
-    
-    @media (max-width: 768px) {
-      .menu-grid, .about-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 32px; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кофейня «Зёрна»</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;color:#1c1917;line-height:1.65}.container{max-width:1120px;margin:0 auto;padding:0 24px}a{text-decoration:none;color:inherit}
+header{position:absolute;top:0;left:0;right:0;z-index:20;padding:24px 0}header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;font-size:22px;color:#fff}.btn-header{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 22px;border-radius:8px;font-weight:600;font-size:14px;backdrop-filter:blur(8px)}
+.hero{background:linear-gradient(rgba(28,25,23,.55),rgba(28,25,23,.7)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=85') center/cover;color:#fff;padding:170px 0 130px;text-align:center}
+.hero h1{font-size:52px;font-weight:800;letter-spacing:-1.8px;margin-bottom:16px}.hero p{font-size:18px;opacity:.9;max-width:480px;margin:0 auto 36px}
+.btn{display:inline-flex;background:#d97706;color:#fff;padding:15px 34px;border-radius:10px;font-weight:700;font-size:16px;transition:.2s}.btn:hover{background:#b45309;transform:translateY(-2px)}
+.section{padding:90px 0}.section-title{text-align:center;font-size:32px;font-weight:800;letter-spacing:-.8px;margin-bottom:52px}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.menu-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e7e5e4;box-shadow:0 4px 20px rgba(0,0,0,.04);transition:.25s}
+.menu-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.menu-img{height:190px;overflow:hidden}.menu-img img{width:100%;height:100%;object-fit:cover}
+.menu-body{padding:22px}.menu-body h3{font-size:17px;font-weight:700;margin-bottom:6px}.menu-body p{font-size:14px;color:#78716c;margin-bottom:14px}.menu-price{font-weight:800;font-size:18px;color:#d97706}
+.about-section{background:#fafaf9}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-grid h2{font-size:30px;font-weight:800;margin-bottom:16px;letter-spacing:-.6px}.about-grid p{color:#78716c;margin-bottom:12px;font-size:15.5px}
+.cta{background:#1c1917;color:#fff;padding:90px 0;text-align:center}.cta h2{font-size:32px;font-weight:800;margin-bottom:12px}.cta p{opacity:.8;margin-bottom:28px}
+footer{padding:28px 0;text-align:center;color:#a8a29e;font-size:13px}
+@media(max-width:768px){.menu-grid,.about-grid{grid-template-columns:1fr}.hero h1{font-size:34px}.hero{padding:140px 0 100px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">Зёрна</div>
-      <a href="#book" class="btn-header">Забронировать стол</a>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Кофейня «Зёрна»</h1>
-      <p>Авторский кофе, свежая выпечка и уютная атмосфера в самом центре города</p>
-      <a href="#menu" class="btn">Смотреть меню</a>
-    </div>
-  </section>
-
-  <section class="section" id="menu">
-    <div class="container">
-      <h2 class="section-title">Популярное в меню</h2>
-      <div class="menu-grid">
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Капучино">
-          </div>
-          <div class="menu-body">
-            <h3>Капучино</h3>
-            <p>Классический на двойном эспрессо с бархатной пенкой</p>
-            <div class="menu-price">320 ₽</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Латте">
-          </div>
-          <div class="menu-body">
-            <h3>Флэт уайт</h3>
-            <p>Насыщенный вкус эспрессо и идеальный баланс молока</p>
-            <div class="menu-price">340 ₽</div>
-          </div>
-        </div>
-        <div class="menu-card">
-          <div class="menu-img">
-            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80" alt="Круассан">
-          </div>
-          <div class="menu-body">
-            <h3>Круассан с миндалём</h3>
-            <p>Свежая выпечка каждый день, хрустящий и ароматный</p>
-            <div class="menu-price">280 ₽</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section about-section">
-    <div class="container">
-      <div class="about-grid">
-        <div>
-          <h2>Место, куда хочется возвращаться</h2>
-          <p>Мы обжариваем зерно сами и готовим каждый напиток с вниманием к деталям. Здесь можно поработать, встретиться с друзьями или просто выпить отличный кофе.</p>
-          <p>Открыты ежедневно с 8:00 до 22:00. Есть уютный зал и летняя веранда.</p>
-        </div>
-        <div style="height:280px; border-radius:20px; overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=700&q=80" alt="Интерьер" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta" id="book">
-    <div class="container">
-      <h2>Забронируйте столик</h2>
-      <p>Напишите нам — подтвердим бронь в течение 15 минут</p>
-      <a href="#" class="btn" onclick="alert('Демо. Здесь будет форма бронирования.'); return false;">Забронировать</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">Демо-сайт для портфолио веб-разработчика</div>
-  </footer>
+<header><div class="container"><div class="logo">Зёрна</div><a href="#book" class="btn-header">Забронировать стол</a></div></header>
+<section class="hero"><div class="container"><h1>Кофейня «Зёрна»</h1><p>Авторский кофе, свежая выпечка и уютная атмосфера в самом центре города</p><a href="#menu" class="btn">Смотреть меню</a></div></section>
+<section class="section" id="menu"><div class="container"><h2 class="section-title">Популярное в меню</h2><div class="menu-grid">
+<div class="menu-card"><div class="menu-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=85" alt="Капучино"></div><div class="menu-body"><h3>Капучино</h3><p>Классический на двойном эспрессо с бархатной пенкой</p><div class="menu-price">320 ₽</div></div></div>
+<div class="menu-card"><div class="menu-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=85" alt="Флэт уайт"></div><div class="menu-body"><h3>Флэт уайт</h3><p>Насыщенный вкус эспрессо и идеальный баланс молока</p><div class="menu-price">340 ₽</div></div></div>
+<div class="menu-card"><div class="menu-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=85" alt="Круассан"></div><div class="menu-body"><h3>Круассан с миндалём</h3><p>Свежая выпечка каждый день, хрустящий и ароматный</p><div class="menu-price">280 ₽</div></div></div>
+</div></div></section>
+<section class="section about-section"><div class="container"><div class="about-grid">
+<div><h2>Место, куда хочется возвращаться</h2><p>Мы обжариваем зерно сами и готовим каждый напиток с вниманием к деталям. Здесь можно поработать, встретиться с друзьями или просто выпить отличный кофе.</p><p>Открыты ежедневно с 8:00 до 22:00. Есть уютный зал и летняя веранда.</p></div>
+<div style="height:290px;border-radius:20px;overflow:hidden"><img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=85" alt="Интерьер" style="width:100%;height:100%;object-fit:cover"></div>
+</div></div></section>
+<section class="cta" id="book"><div class="container"><h2>Забронируйте столик</h2><p>Напишите нам — подтвердим бронь в течение 15 минут</p><a href="#" class="btn" onclick="alert('Демо. Здесь будет форма бронирования.');return false;">Забронировать</a></div></section>
+<footer><div class="container">Демо-сайт для портфолио веб-разработчика</div></footer>
 </body>
 </html>

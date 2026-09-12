@@ -6,132 +6,28 @@
   <title>Анна Смирнова — Репетитор по математике</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: #0f172a; line-height: 1.6; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
-    a { text-decoration: none; color: inherit; }
-    
-    header { background: #0f172a; color: #fff; padding: 0; }
-    header .container { display: flex; justify-content: space-between; align-items: center; height: 68px; }
-    .logo { font-weight: 700; font-size: 18px; }
-    nav a { margin-left: 28px; font-size: 14px; opacity: 0.85; font-weight: 500; }
-    nav a:hover { opacity: 1; }
-    
-    .hero {
-      padding: 90px 0;
-      background: linear-gradient(180deg, #f1f5f9 0%, #fff 100%);
-    }
-    .hero h1 { font-size: 40px; font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.2; }
-    .hero p { color: #64748b; font-size: 18px; max-width: 520px; margin-bottom: 28px; }
-    .btn { display: inline-flex; background: #0f172a; color: #fff; padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 15px; }
-    .btn:hover { background: #1e293b; }
-    
-    .section { padding: 70px 0; }
-    .section h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 36px; }
-    
-    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .service {
-      background: #fff; padding: 28px; border-radius: 16px;
-      border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      transition: 0.25s;
-    }
-    .service:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-    .service h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .service p { font-size: 14px; color: #64748b; margin-bottom: 16px; }
-    .price { font-weight: 700; font-size: 18px; color: #0f172a; }
-    
-    .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; }
-    .about-img {
-      height: 280px; border-radius: 20px; overflow: hidden;
-      background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80') center/cover;
-    }
-    .about p { color: #64748b; margin-bottom: 14px; font-size: 15px; }
-    
-    .contact-box {
-      background: #0f172a; color: #fff; padding: 48px; border-radius: 20px; text-align: center;
-    }
-    .contact-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
-    .contact-box p { opacity: 0.8; margin-bottom: 24px; }
-    .contact-box .btn { background: #fff; color: #0f172a; }
-    
-    footer { padding: 28px 0; text-align: center; color: #94a3b8; font-size: 13px; border-top: 1px solid #e2e8f0; }
-    
-    @media (max-width: 768px) {
-      .services, .about { grid-template-columns: 1fr; }
-      nav { display: none; }
-      .hero h1 { font-size: 30px; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;color:#0f172a;line-height:1.65}.container{max-width:1040px;margin:0 auto;padding:0 24px}a{text-decoration:none;color:inherit}
+    header{background:#0f172a;color:#fff}header .container{display:flex;justify-content:space-between;align-items:center;height:70px}.logo{font-weight:700;font-size:18px}nav a{margin-left:28px;font-size:14px;opacity:.85;font-weight:500}nav a:hover{opacity:1}
+    .hero{padding:100px 0;background:linear-gradient(180deg,#f1f5f9 0%,#fff 100%)}.hero h1{font-size:42px;font-weight:800;letter-spacing:-1.3px;margin-bottom:18px;line-height:1.15}.hero p{color:#64748b;font-size:18px;max-width:520px;margin-bottom:32px}
+    .btn{display:inline-flex;background:#0f172a;color:#fff;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;transition:.2s}.btn:hover{background:#1e293b;transform:translateY(-1px)}
+    .section{padding:80px 0}.section h2{font-size:30px;font-weight:800;letter-spacing:-.8px;margin-bottom:40px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service{background:#fff;padding:32px 26px;border-radius:18px;border:1px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,.04);transition:.25s}.service:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08)}.service h3{font-size:17px;font-weight:700;margin-bottom:10px}.service p{font-size:14.5px;color:#64748b;margin-bottom:18px}.price{font-weight:800;font-size:20px;color:#0f172a}
+    .about{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:center}.about-img{height:300px;border-radius:20px;overflow:hidden;background:url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85') center/cover}.about p{color:#64748b;margin-bottom:14px;font-size:15.5px}
+    .contact-box{background:#0f172a;color:#fff;padding:56px 40px;border-radius:20px;text-align:center}.contact-box h2{font-size:30px;font-weight:800;margin-bottom:12px}.contact-box p{opacity:.85;margin-bottom:28px}.contact-box .btn{background:#fff;color:#0f172a}
+    footer{padding:28px 0;text-align:center;color:#94a3b8;font-size:13px;border-top:1px solid #e2e8f0}
+    @media(max-width:768px){.services,.about{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:30px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">Анна Смирнова</div>
-      <nav>
-        <a href="#services">Услуги</a>
-        <a href="#about">Обо мне</a>
-        <a href="#contact">Контакты</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Репетитор по математике<br>для школьников 5–11 классов</h1>
-      <p>Помогаю подтянуть оценки, подготовиться к ОГЭ и ЕГЭ. Индивидуальный подход и понятные объяснения без зубрёжки.</p>
-      <a href="#contact" class="btn">Записаться на занятие</a>
-    </div>
-  </section>
-
-  <section class="section" id="services">
-    <div class="container">
-      <h2>Услуги и цены</h2>
-      <div class="services">
-        <div class="service">
-          <h3>Подтягивание программы</h3>
-          <p>Разбор сложных тем, работа с пробелами в знаниях, подготовка к контрольным.</p>
-          <div class="price">от 1 500 ₽ / час</div>
-        </div>
-        <div class="service">
-          <h3>Подготовка к ОГЭ</h3>
-          <p>Систематическая подготовка по всем заданиям. Разбор типовых вариантов.</p>
-          <div class="price">от 1 800 ₽ / час</div>
-        </div>
-        <div class="service">
-          <h3>Подготовка к ЕГЭ</h3>
-          <p>Профильный и базовый уровень. Стратегия решения и работа над ошибками.</p>
-          <div class="price">от 2 000 ₽ / час</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about" style="background:#f8fafc;">
-    <div class="container">
-      <div class="about">
-        <div class="about-img"></div>
-        <div>
-          <h2>Обо мне</h2>
-          <p>Окончила механико-математический факультет. Более 6 лет готовлю школьников к экзаменам и помогаю улучшить оценки.</p>
-          <p>Мои ученики стабильно сдают ОГЭ на 4–5 и ЕГЭ от 70 баллов. Занятия проходят онлайн в Zoom или у вас дома.</p>
-          <p>Главный принцип — объяснять так, чтобы ученик действительно понял, а не просто запомнил формулу.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Запишитесь на первое занятие</h2>
-        <p>Напишите в Telegram — обсудим удобное время и формат занятий</p>
-        <a href="#" class="btn" onclick="alert('Демо. Укажите реальный Telegram.'); return false;">Написать в Telegram</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">Демо-сайт для портфолио веб-разработчика</div>
-  </footer>
+  <header><div class="container"><div class="logo">Анна Смирнова</div><nav><a href="#services">Услуги</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a></nav></div></header>
+  <section class="hero"><div class="container"><h1>Репетитор по математике<br>для школьников 5–11 классов</h1><p>Помогаю подтянуть оценки, подготовиться к ОГЭ и ЕГЭ. Индивидуальный подход и понятные объяснения без зубрёжки.</p><a href="#contact" class="btn">Записаться на занятие</a></div></section>
+  <section class="section" id="services"><div class="container"><h2>Услуги и цены</h2><div class="services">
+    <div class="service"><h3>Подтягивание программы</h3><p>Разбор сложных тем, работа с пробелами, подготовка к контрольным.</p><div class="price">от 1 500 ₽/час</div></div>
+    <div class="service"><h3>Подготовка к ОГЭ</h3><p>Систематическая подготовка по всем заданиям. Разбор типовых вариантов.</p><div class="price">от 1 800 ₽/час</div></div>
+    <div class="service"><h3>Подготовка к ЕГЭ</h3><p>Профильный и базовый уровень. Стратегия решения и работа над ошибками.</p><div class="price">от 2 000 ₽/час</div></div>
+  </div></div></section>
+  <section class="section" id="about" style="background:#f8fafc"><div class="container"><div class="about"><div class="about-img"></div><div><h2>Обо мне</h2><p>Окончила механико-математический факультет. Более 6 лет готовлю школьников к экзаменам и помогаю улучшить оценки.</p><p>Мои ученики стабильно сдают ОГЭ на 4–5 и ЕГЭ от 70 баллов. Занятия проходят онлайн в Zoom или у вас дома.</p><p>Главный принцип — объяснять так, чтобы ученик действительно понял тему.</p></div></div></div></section>
+  <section class="section" id="contact"><div class="container"><div class="contact-box"><h2>Запишитесь на первое занятие</h2><p>Напишите в Telegram — обсудим удобное время и формат</p><a href="#" class="btn" onclick="alert('Демо. Укажите реальный Telegram.');return false;">Написать в Telegram</a></div></div></section>
+  <footer><div class="container">Демо-сайт для портфолио веб-разработчика</div></footer>
 </body>
 </html>

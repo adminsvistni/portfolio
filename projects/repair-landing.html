@@ -6,130 +6,42 @@
   <title>Ремонт квартир под ключ</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; color: #0f172a; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    
-    .hero {
-      background: linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.8)),
-                  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=80') center/cover;
-      color: #fff;
-      padding: 120px 0 100px;
-      text-align: center;
-    }
-    .hero h1 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.15; }
-    .hero p { font-size: 18px; opacity: 0.9; max-width: 540px; margin: 0 auto 32px; }
-    .btn {
-      display: inline-flex; background: #f59e0b; color: #0f172a;
-      padding: 15px 32px; border-radius: 10px; font-weight: 700; font-size: 16px;
-      text-decoration: none; transition: 0.2s;
-    }
-    .btn:hover { background: #d97706; }
-    
-    .section { padding: 80px 0; }
-    .section-title { text-align: center; font-size: 30px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 48px; }
-    
-    .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-    .benefit strong { display: block; font-size: 32px; font-weight: 800; color: #f59e0b; margin-bottom: 6px; }
-    .benefit span { font-size: 14px; color: #64748b; }
-    
-    .calc-section { background: #f8fafc; }
-    .calc-box {
-      background: #fff; border-radius: 20px; padding: 40px;
-      max-width: 480px; margin: 0 auto;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;
-    }
-    .calc-box h3 { text-align: center; font-size: 20px; font-weight: 700; margin-bottom: 24px; }
-    .calc-row { margin-bottom: 18px; }
-    .calc-row label { display: block; font-size: 13px; font-weight: 600; color: #64748b; margin-bottom: 8px; }
-    .calc-row select, .calc-row input {
-      width: 100%; padding: 13px 14px; border: 1.5px solid #e2e8f0;
-      border-radius: 10px; font-size: 15px; font-family: inherit;
-    }
-    .calc-result {
-      margin-top: 24px; padding: 18px; background: #fffbeb;
-      border-radius: 12px; text-align: center; font-size: 22px; font-weight: 800; color: #0f172a;
-    }
-    .calc-note { text-align: center; font-size: 13px; color: #94a3b8; margin-top: 12px; }
-    
-    .cta { background: #0f172a; color: #fff; padding: 70px 0; text-align: center; }
-    .cta h2 { font-size: 30px; font-weight: 800; margin-bottom: 12px; }
-    .cta p { opacity: 0.8; margin-bottom: 28px; }
-    
-    footer { padding: 28px 0; text-align: center; color: #94a3b8; font-size: 13px; }
-    
-    @media (max-width: 768px) {
-      .benefits { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .hero h1 { font-size: 30px; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;color:#0f172a}.container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .hero{background:linear-gradient(rgba(15,23,42,.72),rgba(15,23,42,.78)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=85') center/cover;color:#fff;padding:140px 0 110px;text-align:center}
+    .hero h1{font-size:46px;font-weight:800;letter-spacing:-1.6px;margin-bottom:18px;line-height:1.12}.hero p{font-size:18px;opacity:.92;max-width:540px;margin:0 auto 36px}
+    .btn{display:inline-flex;background:#f59e0b;color:#0f172a;padding:15px 34px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:.2s}.btn:hover{background:#d97706;transform:translateY(-2px)}
+    .section{padding:90px 0}.section-title{text-align:center;font-size:32px;font-weight:800;letter-spacing:-.8px;margin-bottom:52px}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}.benefit strong{display:block;font-size:34px;font-weight:800;color:#f59e0b;margin-bottom:6px}.benefit span{font-size:14px;color:#64748b;font-weight:500}
+    .calc-section{background:#f8fafc}.calc-box{background:#fff;border-radius:20px;padding:44px;max-width:460px;margin:0 auto;box-shadow:0 12px 40px rgba(0,0,0,.06);border:1px solid #e2e8f0}
+    .calc-box h3{text-align:center;font-size:20px;font-weight:700;margin-bottom:28px}.calc-row{margin-bottom:18px}.calc-row label{display:block;font-size:13px;font-weight:600;color:#64748b;margin-bottom:8px}
+    .calc-row select,.calc-row input{width:100%;padding:13px 14px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:15px;font-family:inherit;background:#f8fafc}
+    .calc-result{margin-top:24px;padding:18px;background:#fffbeb;border-radius:12px;text-align:center;font-size:24px;font-weight:800}.calc-note{text-align:center;font-size:13px;color:#94a3b8;margin-top:12px}
+    .cta{background:#0f172a;color:#fff;padding:80px 0;text-align:center}.cta h2{font-size:32px;font-weight:800;margin-bottom:12px}.cta p{opacity:.85;margin-bottom:28px}
+    footer{padding:28px 0;text-align:center;color:#94a3b8;font-size:13px}
+    @media(max-width:768px){.benefits{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:30px}.hero{padding:100px 0 80px}}
   </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="container">
-      <h1>Ремонт квартир под ключ<br>в Москве и области</h1>
-      <p>Качественный ремонт с фиксированной сметой. Соблюдаем сроки. Гарантия 2 года на все работы.</p>
-      <a href="#calc" class="btn">Рассчитать стоимость</a>
+  <section class="hero"><div class="container"><h1>Ремонт квартир под ключ<br>в Москве и области</h1><p>Качественный ремонт с фиксированной сметой. Соблюдаем сроки. Гарантия 2 года на все работы.</p><a href="#calc" class="btn">Рассчитать стоимость</a></div></section>
+  <section class="section"><div class="container"><div class="benefits">
+    <div class="benefit"><strong>7+</strong><span>лет опыта</span></div>
+    <div class="benefit"><strong>240+</strong><span>объектов</span></div>
+    <div class="benefit"><strong>2 года</strong><span>гарантии</span></div>
+    <div class="benefit"><strong>0</strong><span>скрытых платежей</span></div>
+  </div></div></section>
+  <section class="section calc-section" id="calc"><div class="container"><h2 class="section-title">Калькулятор стоимости</h2>
+    <div class="calc-box"><h3>Примерный расчёт</h3>
+      <div class="calc-row"><label>Площадь квартиры (м²)</label><input type="number" id="area" value="50" min="20" max="200"></div>
+      <div class="calc-row"><label>Тип ремонта</label><select id="type"><option value="12000">Косметический</option><option value="18000" selected>Капитальный</option><option value="25000">Дизайнерский</option></select></div>
+      <div class="calc-result">от <span id="result">900 000</span> ₽</div>
+      <p class="calc-note">Точная смета после бесплатного замера</p>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="benefits">
-        <div class="benefit"><strong>7+</strong><span>лет опыта</span></div>
-        <div class="benefit"><strong>240+</strong><span>выполненных объектов</span></div>
-        <div class="benefit"><strong>2 года</strong><span>гарантии</span></div>
-        <div class="benefit"><strong>0</strong><span>скрытых платежей</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section calc-section" id="calc">
-    <div class="container">
-      <h2 class="section-title">Калькулятор стоимости</h2>
-      <div class="calc-box">
-        <h3>Примерный расчёт</h3>
-        <div class="calc-row">
-          <label>Площадь квартиры (м²)</label>
-          <input type="number" id="area" value="50" min="20" max="200">
-        </div>
-        <div class="calc-row">
-          <label>Тип ремонта</label>
-          <select id="type">
-            <option value="12000">Косметический</option>
-            <option value="18000" selected>Капитальный</option>
-            <option value="25000">Дизайнерский</option>
-          </select>
-        </div>
-        <div class="calc-result">
-          от <span id="result">900 000</span> ₽
-        </div>
-        <p class="calc-note">Точная смета после бесплатного замера</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2>Получите бесплатный замер и смету</h2>
-      <p>Оставьте заявку — инженер приедет в удобное для вас время</p>
-      <a href="#" class="btn" onclick="alert('Демо. Здесь будет форма заявки.'); return false;">Оставить заявку</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">Демо-лендинг для портфолио</div>
-  </footer>
-
+  </div></section>
+  <section class="cta"><div class="container"><h2>Получите бесплатный замер и смету</h2><p>Оставьте заявку — инженер приедет в удобное время</p><a href="#" class="btn" onclick="alert('Демо. Здесь будет форма заявки.');return false;">Оставить заявку</a></div></section>
+  <footer><div class="container">Демо-лендинг для портфолио</div></footer>
   <script>
-    function calc() {
-      const area = Number(document.getElementById('area').value) || 0;
-      const price = Number(document.getElementById('type').value);
-      document.getElementById('result').textContent = (area * price).toLocaleString('ru-RU');
-    }
-    document.getElementById('area').addEventListener('input', calc);
-    document.getElementById('type').addEventListener('change', calc);
-    calc();
+    function calc(){const a=Number(document.getElementById('area').value)||0;const p=Number(document.getElementById('type').value);document.getElementById('result').textContent=(a*p).toLocaleString('ru-RU')}
+    document.getElementById('area').addEventListener('input',calc);document.getElementById('type').addEventListener('change',calc);calc();
   </script>
 </body>
 </html>
