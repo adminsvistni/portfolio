@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Веб-разработчик | Портфолио</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Навигация -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">WebDev</a>
+      <nav class="nav">
+        <a href="#projects">Проекты</a>
+        <a href="#skills">Навыки</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact" class="btn btn-primary">Связаться</a>
+      </nav>
+      <button class="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-label">Веб-разработчик</p>
+        <h1>Создаю быстрые и современные сайты, которые приносят результат</h1>
+        <p class="hero-desc">
+          Специализируюсь на лендингах, сайтах на WordPress/Tilda и Telegram-ботах. 
+          Работаю быстро, чисто и с упором на конверсию.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Смотреть работы</a>
+          <a href="#contact" class="btn btn-outline">Обсудить проект</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Проекты -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Избранные проекты</h2>
+        <p>Несколько работ, которые показывают мой подход</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Проект 1 -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <span>Лендинг</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Лендинг для онлайн-школы</h3>
+            <p>Продающий одностраничник с формой заявки, блоком преимуществ и отзывами. Адаптивная вёрстка, быстрая загрузка.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Адаптив</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/landing-school.html" target="_blank" class="link">Открыть демо →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Проект 2 -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <span>Сайт-визитка</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Сайт для репетитора</h3>
+            <p>Многостраничный сайт-визитка с услугами, ценами и формой записи. Чистый дизайн и удобная навигация.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JS</span>
+              <span>Формы</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/tutor-site.html" target="_blank" class="link">Открыть демо →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Проект 3 -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <span>Telegram-бот</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Telegram-бот для записи</h3>
+            <p>Бот с меню, сбором заявок и уведомлениями администратору. Пример логики и интерфейса.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>aiogram</span>
+              <span>Бот</span>
+            </div>
+            <div class="project-links">
+              <a href="#contact" class="link">Заказать похожего →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Проект 4 -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+              <span>Лендинг</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Лендинг услуг (ремонт)</h3>
+            <p>Яркий лендинг с калькулятором стоимости, галереей работ и формой обратной связи.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JS</span>
+              <span>Калькулятор</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/repair-landing.html" target="_blank" class="link">Открыть демо →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Проект 5 - новый -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+              <span>Интернет-магазин</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Каталог товаров (мини-магазин)</h3>
+            <p>Простой каталог с карточками товаров, фильтрами и корзиной. Подходит для небольших магазинов.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Корзина</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/mini-shop.html" target="_blank" class="link">Открыть демо →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Проект 6 - новый -->
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+              <span>Лендинг</span>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Лендинг для психолога</h3>
+            <p>Спокойный и доверительный дизайн. Блоки об услугах, подходе и запись на консультацию.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>Адаптив</span>
+              <span>Форма</span>
+            </div>
+            <div class="project-links">
+              <a href="projects/psychologist.html" target="_blank" class="link">Открыть демо →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Навыки -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Навыки</h2>
+        <p>С чем работаю</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Вёрстка и фронтенд</h4>
+          <ul>
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>Адаптивная вёрстка</li>
+            <li>Работа с Figma / макетами</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>CMS и конструкторы</h4>
+          <ul>
+            <li>WordPress + Elementor</li>
+            <li>Tilda</li>
+            <li>Базовая работа с Bitrix</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Дополнительно</h4>
+          <ul>
+            <li>Telegram-боты</li>
+            <li>Формы и интеграции</li>
+            <li>Базовая оптимизация скорости</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Чем могу помочь</h2>
+        <p>Основные услуги</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">01</div>
+          <h3>Лендинги</h3>
+          <p>Продающие одностраничники с нуля или по макету. Быстро, адаптивно, с формами заявок.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">02</div>
+          <h3>Сайты на WordPress / Tilda</h3>
+          <p>Удобные в управлении сайты для бизнеса, специалистов и небольших компаний.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">03</div>
+          <h3>Telegram-боты</h3>
+          <p>Боты для записи, сбора заявок, уведомлений и простой автоматизации.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">04</div>
+          <h3>Правки и доработки</h3>
+          <p>Исправление ошибок, добавление блоков, адаптация под мобильные, мелкие улучшения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="contact-block">
+        <div class="contact-info">
+          <h2>Давайте обсудим ваш проект</h2>
+          <p>Напишите, что нужно сделать — отвечу в течение нескольких часов и предложу решение с ориентиром по срокам и цене.</p>
+          <ul class="contact-list">
+            <li><strong>Telegram:</strong> @your_username</li>
+            <li><strong>Email:</strong> your.email@example.com</li>
+          </ul>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Это демо-форма. Замените на реальную обработку или просто укажите контакты.');">
+          <div class="form-group">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+          </div>
+          <div class="form-group">
+            <label for="contact">Telegram или Email</label>
+            <input type="text" id="contact" name="contact" placeholder="@username или email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Кратко о задаче</label>
+            <textarea id="message" name="message" rows="4" placeholder="Что нужно сделать?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Веб-разработчик. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
